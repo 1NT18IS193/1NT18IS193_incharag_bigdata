@@ -1,0 +1,914 @@
+inchara@inchara-VirtualBox:~$ mongo
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { "id" : UUID("be9a2843-9735-4bbe-9da0-3619b0a90969") }
+MongoDB server version: 3.6.8
+Server has startup warnings: 
+2021-04-16T15:25:50.893+0530 I STORAGE  [initandlisten] 
+2021-04-16T15:25:50.894+0530 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2021-04-16T15:25:50.894+0530 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2021-04-16T15:26:07.658+0530 I CONTROL  [initandlisten] 
+2021-04-16T15:26:07.658+0530 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2021-04-16T15:26:07.658+0530 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2021-04-16T15:26:07.658+0530 I CONTROL  [initandlisten] 
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use test
+switched to db test
+> exit
+bye
+inchara@inchara-VirtualBox:~$ mongoimport --type csv -d drug-use-by-age -c inventory --headerline --drop /home/inchara/Downloads/drug-use-by-age.csv
+2021-04-19T12:17:11.089+0530	Failed: fields cannot be identical: '-' and '-'
+2021-04-19T12:17:11.089+0530	imported 0 documents
+inchara@inchara-VirtualBox:~$ mongoimport --type csv -d drug -c inventory --headerline --drop /home/inchara/Downloads/drug-use-by-age.csv
+2021-04-19T12:17:32.298+0530	Failed: fields cannot be identical: '-' and '-'
+2021-04-19T12:17:32.298+0530	imported 0 documents
+inchara@inchara-VirtualBox:~$ mongoimport --type csv -d drug -c inventory --headerline --drop /home/inchara/Downloads/drugs.csv
+2021-04-19T12:18:02.878+0530	Failed: fields cannot be identical: '-' and '-'
+inchara@inchara-VirtualBox:~$ mongoimport --type csv -d drug -c inventory --headerline --drop /home/inchara/Downloads/drugs.csv
+2021-04-19T12:20:11.825+0530	Failed: fields cannot be identical: '-' and '-'
+2021-04-19T12:20:11.825+0530	imported 0 documents
+inchara@inchara-VirtualBox:~$ mongoimport --type csv -d drug -c inventory --headerline --drop /home/inchara/Downloads/drugs.csv
+2021-04-19T12:22:37.554+0530	Failed: fields cannot be identical: '-' and '-'
+2021-04-19T12:22:37.557+0530	imported 0 documents
+inchara@inchara-VirtualBox:~$ mongoimport --type  csv -d drug -c inventory --headline --drop /home/inchara/Downloads/drugs.csv
+2021-04-19T12:30:10.372+0530	error parsing command line options: unknown option "headline"
+2021-04-19T12:30:10.372+0530	try 'mongoimport --help' for more information
+inchara@inchara-VirtualBox:~$ mongoimport --type  csv -d drug -c inventory --headerline --drop /home/inchara/Downloads/drugs.csv
+2021-04-19T12:30:31.029+0530	Failed: fields cannot be identical: '-' and '-'
+2021-04-19T12:30:31.030+0530	imported 0 documents
+inchara@inchara-VirtualBox:~$ mongoimport --type  csv -d drug -c inventory --headerline --drop /home/inchara/Downloads/drug-use-by-age.csv
+2021-04-19T12:35:00.398+0530	Failed: fields cannot be identical: '-' and '-'
+2021-04-19T12:35:00.399+0530	imported 0 documents
+inchara@inchara-VirtualBox:~$ mongoimport --type  csv -d drug -c inventory --headerline --drop /home/inchara/Downloads/drug-use-by-age.csv
+2021-04-19T12:39:41.782+0530	Failed: fields cannot be identical: '-' and '-'
+2021-04-19T12:39:41.783+0530	imported 0 documents
+inchara@inchara-VirtualBox:~$ mongoimport --type  csv -d drug -c inventory --headerline --drop /home/inchara/Downloads/drug-use-by-age.csv
+2021-04-19T12:42:33.609+0530	Failed: fields cannot be identical: '-' and '-'
+2021-04-19T12:42:33.621+0530	imported 0 documents
+inchara@inchara-VirtualBox:~$ mongoimport --type  csv -d drug -c inventory --headerline --drop /home/inchara/Downloads/drugs.csv
+2021-04-19T12:42:39.775+0530	Failed: fields cannot be identical: '-' and '-'
+2021-04-19T12:42:39.775+0530	imported 0 documents
+inchara@inchara-VirtualBox:~$ mongoimport --type  csv -d drug -c inventory --headerline --drop /home/inchara/Downloads/drug-use-by-age.csv
+2021-04-19T12:44:51.658+0530	Failed: fields cannot be identical: '-' and '-'
+2021-04-19T12:44:51.660+0530	imported 0 documents
+inchara@inchara-VirtualBox:~$ mongoimport --type  csv -d drug -c inventory --headerline --drop /home/inchara/Downloads/drug2.csv
+2021-04-19T12:53:37.034+0530	connected to: localhost
+2021-04-19T12:53:37.036+0530	dropping: drug.inventory
+2021-04-19T12:53:37.121+0530	imported 17 documents
+inchara@inchara-VirtualBox:~$ mongoimport --db drug --collections inventory --file /home/inchara/Downloads/drug2.csv
+2021-04-19T12:56:08.869+0530	error parsing command line options: unknown option "collections"
+2021-04-19T12:56:08.870+0530	try 'mongoimport --help' for more information
+inchara@inchara-VirtualBox:~$ mongoimport --db drug --collection inventory --file /home/inchara/Downloads/drug2.csv
+2021-04-19T12:56:20.870+0530	connected to: localhost
+2021-04-19T12:56:20.870+0530	Failed: error processing document #1: invalid character 'a' looking for beginning of value
+2021-04-19T12:56:20.870+0530	imported 0 documents
+inchara@inchara-VirtualBox:~$ mongoexport -db drug -c inventory --out /home/inchara/Downloads
+2021-04-19T12:58:20.391+0530	too many positional arguments: [drug]
+2021-04-19T12:58:20.391+0530	try 'mongoexport --help' for more information
+inchara@inchara-VirtualBox:~$ mongoexpert --collection=inventory --db=drug --out= /home/inchara/Downloads/drug2.csv
+
+Command 'mongoexpert' not found, did you mean:
+
+  command 'mongoexport' from deb mongo-tools (3.6.3-0ubuntu1)
+
+Try: sudo apt install <deb name>
+
+inchara@inchara-VirtualBox:~$ mongoexpert --collection= inventory --db= drug --out= /home/inchara/Downloads/drug2.csv
+
+Command 'mongoexpert' not found, did you mean:
+
+  command 'mongoexport' from deb mongo-tools (3.6.3-0ubuntu1)
+
+Try: sudo apt install <deb name>
+
+inchara@inchara-VirtualBox:~$ mongoexport --collection= inventory --db= drug --out= /home/inchara/Downloads/drug2.csv
+2021-04-19T13:05:54.720+0530	too many positional arguments: [inventory drug /home/inchara/Downloads/drug2.csv]
+2021-04-19T13:05:54.721+0530	try 'mongoexport --help' for more information
+inchara@inchara-VirtualBox:~$ mongoexport -db drug -c inventory --out  /home/inchara/Downloads/drug2.csv
+2021-04-19T13:06:40.623+0530	too many positional arguments: [drug]
+2021-04-19T13:06:40.624+0530	try 'mongoexport --help' for more information
+inchara@inchara-VirtualBox:~$ mongoexport --db drug -c inventory --out  /home/inchara/Downloads/drug2.csv
+2021-04-19T13:18:20.700+0530	connected to: localhost
+2021-04-19T13:18:20.715+0530	exported 17 records
+inchara@inchara-VirtualBox:~$ db.names.find({"age" : {$exists:true}})
+bash: syntax error near unexpected token `{"age"'
+inchara@inchara-VirtualBox:~$ db.names.find({"age":{$exists:true}})
+bash: syntax error near unexpected token `{"age":{$exists:true}}'
+inchara@inchara-VirtualBox:~$ db.names.find({"age": {$exists:true}})
+bash: syntax error near unexpected token `{"age":'
+inchara@inchara-VirtualBox:~$ db.names.find({"20": {$exists:true}})
+bash: syntax error near unexpected token `{"20":'
+inchara@inchara-VirtualBox:~$ db.names.find({"age" : {$exists:true}})
+bash: syntax error near unexpected token `{"age"'
+inchara@inchara-VirtualBox:~$ db.names.find({ "age" : {$exists:true}})
+bash: syntax error near unexpected token `{'
+inchara@inchara-VirtualBox:~$ db.names.find ({ "age" : {$exists:true}})
+bash: syntax error near unexpected token `{'
+inchara@inchara-VirtualBox:~$ db.names.find ({ "20" : {$exists:true}})
+bash: syntax error near unexpected token `{'
+inchara@inchara-VirtualBox:~$ db.names.find ({ "cocaine-use" : {$exists:true}})
+bash: syntax error near unexpected token `{'
+inchara@inchara-VirtualBox:~$ db.names.find ({"cocaine-use" : {$exists:true}})
+bash: syntax error near unexpected token `{"cocaine-use"'
+inchara@inchara-VirtualBox:~$ mongo
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { "id" : UUID("0ee2ab1b-eb9e-4cee-809b-de7b40422d90") }
+MongoDB server version: 3.6.8
+Server has startup warnings: 
+2021-04-16T15:25:50.893+0530 I STORAGE  [initandlisten] 
+2021-04-16T15:25:50.894+0530 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2021-04-16T15:25:50.894+0530 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2021-04-16T15:26:07.658+0530 I CONTROL  [initandlisten] 
+2021-04-16T15:26:07.658+0530 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2021-04-16T15:26:07.658+0530 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2021-04-16T15:26:07.658+0530 I CONTROL  [initandlisten] 
+> show dbs
+admin   0.000GB
+config  0.000GB
+drug    0.000GB
+local   0.000GB
+> use drug
+switched to db drug
+> show collection
+2021-04-19T14:04:19.618+0530 E QUERY    [thread1] Error: don't know how to show [collection] :
+shellHelper.show@src/mongo/shell/utils.js:997:11
+shellHelper@src/mongo/shell/utils.js:750:15
+@(shellhelp2):1:1
+> show collections
+inventory
+> db.inventory.find()
+{ "_id" : ObjectId("607d2ff93da03793b65c40a9"), "age" : 12, "n" : 2798, "alcohol-use" : 3.9, "alcohol-frequency" : 3, "marijuana-use" : 1.1, "marijuana-frequency" : 4, "cocaine-use" : 0.1, "cocaine-frequency" : 5, "crack-use" : 0, "crack-frequency" : "", "heroin-use" : 0.1, "heroin-frequency" : 35.5, "hallucinogen-use" : 0.2, "hallucinogen-frequency" : 52, "inhalant-use" : 1.6, "inhalant-frequency" : 19, "pain-releiver-use" : 2, "pain-releiver-frequency" : 36, "oxycontin-use" : 0.1, "oxycontin-frequency" : 24.5, "tranquilizer-use" : 0.2, "tranquilizer-frequency" : 52, "stimulant-use" : 0.2, "stimulant-frequency" : 2, "meth-use" : 0, "meth-frequency" : "-", "sedative-use" : 0.2, "sedative-frequency" : 13 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40aa"), "age" : 13, "n" : 2757, "alcohol-use" : 8.5, "alcohol-frequency" : 6, "marijuana-use" : 3.4, "marijuana-frequency" : 15, "cocaine-use" : 0.1, "cocaine-frequency" : 1, "crack-use" : 0, "crack-frequency" : 3, "heroin-use" : 0, "heroin-frequency" : "", "hallucinogen-use" : 0.6, "hallucinogen-frequency" : 6, "inhalant-use" : 2.5, "inhalant-frequency" : 12, "pain-releiver-use" : 2.4, "pain-releiver-frequency" : 14, "oxycontin-use" : 0.1, "oxycontin-frequency" : 41, "tranquilizer-use" : 0.3, "tranquilizer-frequency" : 25.5, "stimulant-use" : 0.3, "stimulant-frequency" : 4, "meth-use" : 0.1, "meth-frequency" : 5, "sedative-use" : 0.1, "sedative-frequency" : 19 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ab"), "age" : 14, "n" : 2792, "alcohol-use" : 18.1, "alcohol-frequency" : 5, "marijuana-use" : 8.7, "marijuana-frequency" : 24, "cocaine-use" : 0.1, "cocaine-frequency" : 5.5, "crack-use" : 0, "crack-frequency" : "", "heroin-use" : 0.1, "heroin-frequency" : 2, "hallucinogen-use" : 1.6, "hallucinogen-frequency" : 3, "inhalant-use" : 2.6, "inhalant-frequency" : 5, "pain-releiver-use" : 3.9, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.4, "oxycontin-frequency" : 4.5, "tranquilizer-use" : 0.9, "tranquilizer-frequency" : 5, "stimulant-use" : 0.8, "stimulant-frequency" : 12, "meth-use" : 0.1, "meth-frequency" : 24, "sedative-use" : 0.2, "sedative-frequency" : 16.5 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ac"), "age" : 15, "n" : 2956, "alcohol-use" : 29.2, "alcohol-frequency" : 6, "marijuana-use" : 14.5, "marijuana-frequency" : 25, "cocaine-use" : 0.5, "cocaine-frequency" : 4, "crack-use" : 0.1, "crack-frequency" : 9.5, "heroin-use" : 0.2, "heroin-frequency" : 1, "hallucinogen-use" : 2.1, "hallucinogen-frequency" : 4, "inhalant-use" : 2.5, "inhalant-frequency" : 5.5, "pain-releiver-use" : 5.5, "pain-releiver-frequency" : 10, "oxycontin-use" : 0.8, "oxycontin-frequency" : 3, "tranquilizer-use" : 2, "tranquilizer-frequency" : 4.5, "stimulant-use" : 1.5, "stimulant-frequency" : 6, "meth-use" : 0.3, "meth-frequency" : 10.5, "sedative-use" : 0.4, "sedative-frequency" : 30 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ad"), "age" : 16, "n" : 3058, "alcohol-use" : 40.1, "alcohol-frequency" : 10, "marijuana-use" : 22.5, "marijuana-frequency" : 30, "cocaine-use" : 1, "cocaine-frequency" : 7, "crack-use" : 0, "crack-frequency" : 1, "heroin-use" : 0.1, "heroin-frequency" : 66.5, "hallucinogen-use" : 3.4, "hallucinogen-frequency" : 3, "inhalant-use" : 3, "inhalant-frequency" : 3, "pain-releiver-use" : 6.2, "pain-releiver-frequency" : 7, "oxycontin-use" : 1.1, "oxycontin-frequency" : 4, "tranquilizer-use" : 2.4, "tranquilizer-frequency" : 11, "stimulant-use" : 1.8, "stimulant-frequency" : 9.5, "meth-use" : 0.3, "meth-frequency" : 36, "sedative-use" : 0.2, "sedative-frequency" : 3 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ae"), "age" : 17, "n" : 3038, "alcohol-use" : 49.3, "alcohol-frequency" : 13, "marijuana-use" : 28, "marijuana-frequency" : 36, "cocaine-use" : 2, "cocaine-frequency" : 5, "crack-use" : 0.1, "crack-frequency" : 21, "heroin-use" : 0.1, "heroin-frequency" : 64, "hallucinogen-use" : 4.8, "hallucinogen-frequency" : 3, "inhalant-use" : 2, "inhalant-frequency" : 4, "pain-releiver-use" : 8.5, "pain-releiver-frequency" : 9, "oxycontin-use" : 1.4, "oxycontin-frequency" : 6, "tranquilizer-use" : 3.5, "tranquilizer-frequency" : 7, "stimulant-use" : 2.8, "stimulant-frequency" : 9, "meth-use" : 0.6, "meth-frequency" : 48, "sedative-use" : 0.5, "sedative-frequency" : 6.5 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40af"), "age" : 18, "n" : 2469, "alcohol-use" : 58.7, "alcohol-frequency" : 24, "marijuana-use" : 33.7, "marijuana-frequency" : 52, "cocaine-use" : 3.2, "cocaine-frequency" : 5, "crack-use" : 0.4, "crack-frequency" : 10, "heroin-use" : 0.4, "heroin-frequency" : 46, "hallucinogen-use" : 7, "hallucinogen-frequency" : 4, "inhalant-use" : 1.8, "inhalant-frequency" : 4, "pain-releiver-use" : 9.2, "pain-releiver-frequency" : 12, "oxycontin-use" : 1.7, "oxycontin-frequency" : 7, "tranquilizer-use" : 4.9, "tranquilizer-frequency" : 12, "stimulant-use" : 3, "stimulant-frequency" : 8, "meth-use" : 0.5, "meth-frequency" : 12, "sedative-use" : 0.4, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b0"), "age" : 19, "n" : 2223, "alcohol-use" : 64.6, "alcohol-frequency" : 36, "marijuana-use" : 33.4, "marijuana-frequency" : 60, "cocaine-use" : 4.1, "cocaine-frequency" : 5.5, "crack-use" : 0.5, "crack-frequency" : 2, "heroin-use" : 0.5, "heroin-frequency" : 180, "hallucinogen-use" : 8.6, "hallucinogen-frequency" : 3, "inhalant-use" : 1.4, "inhalant-frequency" : 3, "pain-releiver-use" : 9.4, "pain-releiver-frequency" : 12, "oxycontin-use" : 1.5, "oxycontin-frequency" : 7.5, "tranquilizer-use" : 4.2, "tranquilizer-frequency" : 4.5, "stimulant-use" : 3.3, "stimulant-frequency" : 6, "meth-use" : 0.4, "meth-frequency" : 105, "sedative-use" : 0.3, "sedative-frequency" : 6 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b1"), "age" : 20, "n" : 2271, "alcohol-use" : 69.7, "alcohol-frequency" : 48, "marijuana-use" : 34, "marijuana-frequency" : 60, "cocaine-use" : 4.9, "cocaine-frequency" : 8, "crack-use" : 0.6, "crack-frequency" : 5, "heroin-use" : 0.9, "heroin-frequency" : 45, "hallucinogen-use" : 7.4, "hallucinogen-frequency" : 2, "inhalant-use" : 1.5, "inhalant-frequency" : 4, "pain-releiver-use" : 10, "pain-releiver-frequency" : 10, "oxycontin-use" : 1.7, "oxycontin-frequency" : 12, "tranquilizer-use" : 5.4, "tranquilizer-frequency" : 10, "stimulant-use" : 4, "stimulant-frequency" : 12, "meth-use" : 0.9, "meth-frequency" : 12, "sedative-use" : 0.5, "sedative-frequency" : 4 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b2"), "age" : 21, "n" : 2354, "alcohol-use" : 83.2, "alcohol-frequency" : 52, "marijuana-use" : 33, "marijuana-frequency" : 52, "cocaine-use" : 4.8, "cocaine-frequency" : 5, "crack-use" : 0.5, "crack-frequency" : 17, "heroin-use" : 0.6, "heroin-frequency" : 30, "hallucinogen-use" : 6.3, "hallucinogen-frequency" : 4, "inhalant-use" : 1.4, "inhalant-frequency" : 2, "pain-releiver-use" : 9, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.3, "oxycontin-frequency" : 13.5, "tranquilizer-use" : 3.9, "tranquilizer-frequency" : 7, "stimulant-use" : 4.1, "stimulant-frequency" : 10, "meth-use" : 0.6, "meth-frequency" : 2, "sedative-use" : 0.3, "sedative-frequency" : 9 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b3"), "age" : "22-23", "n" : 4707, "alcohol-use" : 84.2, "alcohol-frequency" : 52, "marijuana-use" : 28.4, "marijuana-frequency" : 52, "cocaine-use" : 4.5, "cocaine-frequency" : 5, "crack-use" : 0.5, "crack-frequency" : 5, "heroin-use" : 1.1, "heroin-frequency" : 57.5, "hallucinogen-use" : 5.2, "hallucinogen-frequency" : 3, "inhalant-use" : 1, "inhalant-frequency" : 4, "pain-releiver-use" : 10, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.7, "oxycontin-frequency" : 17.5, "tranquilizer-use" : 4.4, "tranquilizer-frequency" : 12, "stimulant-use" : 3.6, "stimulant-frequency" : 10, "meth-use" : 0.6, "meth-frequency" : 46, "sedative-use" : 0.2, "sedative-frequency" : 52 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b4"), "age" : "24-25", "n" : 4591, "alcohol-use" : 83.1, "alcohol-frequency" : 52, "marijuana-use" : 24.9, "marijuana-frequency" : 60, "cocaine-use" : 4, "cocaine-frequency" : 6, "crack-use" : 0.5, "crack-frequency" : 6, "heroin-use" : 0.7, "heroin-frequency" : 88, "hallucinogen-use" : 4.5, "hallucinogen-frequency" : 2, "inhalant-use" : 0.8, "inhalant-frequency" : 2, "pain-releiver-use" : 9, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.3, "oxycontin-frequency" : 20, "tranquilizer-use" : 4.3, "tranquilizer-frequency" : 10, "stimulant-use" : 2.6, "stimulant-frequency" : 10, "meth-use" : 0.7, "meth-frequency" : 21, "sedative-use" : 0.2, "sedative-frequency" : 17.5 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b5"), "age" : "26-29", "n" : 2628, "alcohol-use" : 80.7, "alcohol-frequency" : 52, "marijuana-use" : 20.8, "marijuana-frequency" : 52, "cocaine-use" : 3.2, "cocaine-frequency" : 5, "crack-use" : 0.4, "crack-frequency" : 6, "heroin-use" : 0.6, "heroin-frequency" : 50, "hallucinogen-use" : 3.2, "hallucinogen-frequency" : 3, "inhalant-use" : 0.6, "inhalant-frequency" : 4, "pain-releiver-use" : 8.3, "pain-releiver-frequency" : 13, "oxycontin-use" : 1.2, "oxycontin-frequency" : 13.5, "tranquilizer-use" : 4.2, "tranquilizer-frequency" : 10, "stimulant-use" : 2.3, "stimulant-frequency" : 7, "meth-use" : 0.6, "meth-frequency" : 30, "sedative-use" : 0.4, "sedative-frequency" : 4 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b6"), "age" : "30-34", "n" : 2864, "alcohol-use" : 77.5, "alcohol-frequency" : 52, "marijuana-use" : 16.4, "marijuana-frequency" : 72, "cocaine-use" : 2.1, "cocaine-frequency" : 8, "crack-use" : 0.5, "crack-frequency" : 15, "heroin-use" : 0.4, "heroin-frequency" : 66, "hallucinogen-use" : 1.8, "hallucinogen-frequency" : 2, "inhalant-use" : 0.4, "inhalant-frequency" : 3.5, "pain-releiver-use" : 5.9, "pain-releiver-frequency" : 22, "oxycontin-use" : 0.9, "oxycontin-frequency" : 46, "tranquilizer-use" : 3.6, "tranquilizer-frequency" : 8, "stimulant-use" : 1.4, "stimulant-frequency" : 12, "meth-use" : 0.4, "meth-frequency" : 54, "sedative-use" : 0.4, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b7"), "age" : "35-49", "n" : 7391, "alcohol-use" : 75, "alcohol-frequency" : 52, "marijuana-use" : 10.4, "marijuana-frequency" : 48, "cocaine-use" : 1.5, "cocaine-frequency" : 15, "crack-use" : 0.5, "crack-frequency" : 48, "heroin-use" : 0.1, "heroin-frequency" : 280, "hallucinogen-use" : 0.6, "hallucinogen-frequency" : 3, "inhalant-use" : 0.3, "inhalant-frequency" : 10, "pain-releiver-use" : 4.2, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.3, "oxycontin-frequency" : 12, "tranquilizer-use" : 1.9, "tranquilizer-frequency" : 6, "stimulant-use" : 0.6, "stimulant-frequency" : 24, "meth-use" : 0.2, "meth-frequency" : 104, "sedative-use" : 0.3, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b8"), "age" : "50-64", "n" : 3923, "alcohol-use" : 67.2, "alcohol-frequency" : 52, "marijuana-use" : 7.3, "marijuana-frequency" : 52, "cocaine-use" : 0.9, "cocaine-frequency" : 36, "crack-use" : 0.4, "crack-frequency" : 62, "heroin-use" : 0.1, "heroin-frequency" : 41, "hallucinogen-use" : 0.3, "hallucinogen-frequency" : 44, "inhalant-use" : 0.2, "inhalant-frequency" : 13.5, "pain-releiver-use" : 2.5, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.4, "oxycontin-frequency" : 5, "tranquilizer-use" : 1.4, "tranquilizer-frequency" : 10, "stimulant-use" : 0.3, "stimulant-frequency" : 24, "meth-use" : 0.2, "meth-frequency" : 30, "sedative-use" : 0.2, "sedative-frequency" : 104 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b9"), "age" : "65+", "n" : 2448, "alcohol-use" : 49.3, "alcohol-frequency" : 52, "marijuana-use" : 1.2, "marijuana-frequency" : 36, "cocaine-use" : 0, "cocaine-frequency" : "", "crack-use" : 0, "crack-frequency" : "", "heroin-use" : 0, "heroin-frequency" : 120, "hallucinogen-use" : 0.1, "hallucinogen-frequency" : 2, "inhalant-use" : 0, "inhalant-frequency" : "", "pain-releiver-use" : 0.6, "pain-releiver-frequency" : 24, "oxycontin-use" : 0, "oxycontin-frequency" : "-", "tranquilizer-use" : 0.2, "tranquilizer-frequency" : 5, "stimulant-use" : 0, "stimulant-frequency" : 364, "meth-use" : 0, "meth-frequency" : "-", "sedative-use" : 0, "sedative-frequency" : 15 }
+> db.inventory.find({"n":{$exists:true}})
+{ "_id" : ObjectId("607d2ff93da03793b65c40a9"), "age" : 12, "n" : 2798, "alcohol-use" : 3.9, "alcohol-frequency" : 3, "marijuana-use" : 1.1, "marijuana-frequency" : 4, "cocaine-use" : 0.1, "cocaine-frequency" : 5, "crack-use" : 0, "crack-frequency" : "", "heroin-use" : 0.1, "heroin-frequency" : 35.5, "hallucinogen-use" : 0.2, "hallucinogen-frequency" : 52, "inhalant-use" : 1.6, "inhalant-frequency" : 19, "pain-releiver-use" : 2, "pain-releiver-frequency" : 36, "oxycontin-use" : 0.1, "oxycontin-frequency" : 24.5, "tranquilizer-use" : 0.2, "tranquilizer-frequency" : 52, "stimulant-use" : 0.2, "stimulant-frequency" : 2, "meth-use" : 0, "meth-frequency" : "-", "sedative-use" : 0.2, "sedative-frequency" : 13 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40aa"), "age" : 13, "n" : 2757, "alcohol-use" : 8.5, "alcohol-frequency" : 6, "marijuana-use" : 3.4, "marijuana-frequency" : 15, "cocaine-use" : 0.1, "cocaine-frequency" : 1, "crack-use" : 0, "crack-frequency" : 3, "heroin-use" : 0, "heroin-frequency" : "", "hallucinogen-use" : 0.6, "hallucinogen-frequency" : 6, "inhalant-use" : 2.5, "inhalant-frequency" : 12, "pain-releiver-use" : 2.4, "pain-releiver-frequency" : 14, "oxycontin-use" : 0.1, "oxycontin-frequency" : 41, "tranquilizer-use" : 0.3, "tranquilizer-frequency" : 25.5, "stimulant-use" : 0.3, "stimulant-frequency" : 4, "meth-use" : 0.1, "meth-frequency" : 5, "sedative-use" : 0.1, "sedative-frequency" : 19 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ab"), "age" : 14, "n" : 2792, "alcohol-use" : 18.1, "alcohol-frequency" : 5, "marijuana-use" : 8.7, "marijuana-frequency" : 24, "cocaine-use" : 0.1, "cocaine-frequency" : 5.5, "crack-use" : 0, "crack-frequency" : "", "heroin-use" : 0.1, "heroin-frequency" : 2, "hallucinogen-use" : 1.6, "hallucinogen-frequency" : 3, "inhalant-use" : 2.6, "inhalant-frequency" : 5, "pain-releiver-use" : 3.9, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.4, "oxycontin-frequency" : 4.5, "tranquilizer-use" : 0.9, "tranquilizer-frequency" : 5, "stimulant-use" : 0.8, "stimulant-frequency" : 12, "meth-use" : 0.1, "meth-frequency" : 24, "sedative-use" : 0.2, "sedative-frequency" : 16.5 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ac"), "age" : 15, "n" : 2956, "alcohol-use" : 29.2, "alcohol-frequency" : 6, "marijuana-use" : 14.5, "marijuana-frequency" : 25, "cocaine-use" : 0.5, "cocaine-frequency" : 4, "crack-use" : 0.1, "crack-frequency" : 9.5, "heroin-use" : 0.2, "heroin-frequency" : 1, "hallucinogen-use" : 2.1, "hallucinogen-frequency" : 4, "inhalant-use" : 2.5, "inhalant-frequency" : 5.5, "pain-releiver-use" : 5.5, "pain-releiver-frequency" : 10, "oxycontin-use" : 0.8, "oxycontin-frequency" : 3, "tranquilizer-use" : 2, "tranquilizer-frequency" : 4.5, "stimulant-use" : 1.5, "stimulant-frequency" : 6, "meth-use" : 0.3, "meth-frequency" : 10.5, "sedative-use" : 0.4, "sedative-frequency" : 30 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ad"), "age" : 16, "n" : 3058, "alcohol-use" : 40.1, "alcohol-frequency" : 10, "marijuana-use" : 22.5, "marijuana-frequency" : 30, "cocaine-use" : 1, "cocaine-frequency" : 7, "crack-use" : 0, "crack-frequency" : 1, "heroin-use" : 0.1, "heroin-frequency" : 66.5, "hallucinogen-use" : 3.4, "hallucinogen-frequency" : 3, "inhalant-use" : 3, "inhalant-frequency" : 3, "pain-releiver-use" : 6.2, "pain-releiver-frequency" : 7, "oxycontin-use" : 1.1, "oxycontin-frequency" : 4, "tranquilizer-use" : 2.4, "tranquilizer-frequency" : 11, "stimulant-use" : 1.8, "stimulant-frequency" : 9.5, "meth-use" : 0.3, "meth-frequency" : 36, "sedative-use" : 0.2, "sedative-frequency" : 3 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ae"), "age" : 17, "n" : 3038, "alcohol-use" : 49.3, "alcohol-frequency" : 13, "marijuana-use" : 28, "marijuana-frequency" : 36, "cocaine-use" : 2, "cocaine-frequency" : 5, "crack-use" : 0.1, "crack-frequency" : 21, "heroin-use" : 0.1, "heroin-frequency" : 64, "hallucinogen-use" : 4.8, "hallucinogen-frequency" : 3, "inhalant-use" : 2, "inhalant-frequency" : 4, "pain-releiver-use" : 8.5, "pain-releiver-frequency" : 9, "oxycontin-use" : 1.4, "oxycontin-frequency" : 6, "tranquilizer-use" : 3.5, "tranquilizer-frequency" : 7, "stimulant-use" : 2.8, "stimulant-frequency" : 9, "meth-use" : 0.6, "meth-frequency" : 48, "sedative-use" : 0.5, "sedative-frequency" : 6.5 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40af"), "age" : 18, "n" : 2469, "alcohol-use" : 58.7, "alcohol-frequency" : 24, "marijuana-use" : 33.7, "marijuana-frequency" : 52, "cocaine-use" : 3.2, "cocaine-frequency" : 5, "crack-use" : 0.4, "crack-frequency" : 10, "heroin-use" : 0.4, "heroin-frequency" : 46, "hallucinogen-use" : 7, "hallucinogen-frequency" : 4, "inhalant-use" : 1.8, "inhalant-frequency" : 4, "pain-releiver-use" : 9.2, "pain-releiver-frequency" : 12, "oxycontin-use" : 1.7, "oxycontin-frequency" : 7, "tranquilizer-use" : 4.9, "tranquilizer-frequency" : 12, "stimulant-use" : 3, "stimulant-frequency" : 8, "meth-use" : 0.5, "meth-frequency" : 12, "sedative-use" : 0.4, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b0"), "age" : 19, "n" : 2223, "alcohol-use" : 64.6, "alcohol-frequency" : 36, "marijuana-use" : 33.4, "marijuana-frequency" : 60, "cocaine-use" : 4.1, "cocaine-frequency" : 5.5, "crack-use" : 0.5, "crack-frequency" : 2, "heroin-use" : 0.5, "heroin-frequency" : 180, "hallucinogen-use" : 8.6, "hallucinogen-frequency" : 3, "inhalant-use" : 1.4, "inhalant-frequency" : 3, "pain-releiver-use" : 9.4, "pain-releiver-frequency" : 12, "oxycontin-use" : 1.5, "oxycontin-frequency" : 7.5, "tranquilizer-use" : 4.2, "tranquilizer-frequency" : 4.5, "stimulant-use" : 3.3, "stimulant-frequency" : 6, "meth-use" : 0.4, "meth-frequency" : 105, "sedative-use" : 0.3, "sedative-frequency" : 6 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b1"), "age" : 20, "n" : 2271, "alcohol-use" : 69.7, "alcohol-frequency" : 48, "marijuana-use" : 34, "marijuana-frequency" : 60, "cocaine-use" : 4.9, "cocaine-frequency" : 8, "crack-use" : 0.6, "crack-frequency" : 5, "heroin-use" : 0.9, "heroin-frequency" : 45, "hallucinogen-use" : 7.4, "hallucinogen-frequency" : 2, "inhalant-use" : 1.5, "inhalant-frequency" : 4, "pain-releiver-use" : 10, "pain-releiver-frequency" : 10, "oxycontin-use" : 1.7, "oxycontin-frequency" : 12, "tranquilizer-use" : 5.4, "tranquilizer-frequency" : 10, "stimulant-use" : 4, "stimulant-frequency" : 12, "meth-use" : 0.9, "meth-frequency" : 12, "sedative-use" : 0.5, "sedative-frequency" : 4 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b2"), "age" : 21, "n" : 2354, "alcohol-use" : 83.2, "alcohol-frequency" : 52, "marijuana-use" : 33, "marijuana-frequency" : 52, "cocaine-use" : 4.8, "cocaine-frequency" : 5, "crack-use" : 0.5, "crack-frequency" : 17, "heroin-use" : 0.6, "heroin-frequency" : 30, "hallucinogen-use" : 6.3, "hallucinogen-frequency" : 4, "inhalant-use" : 1.4, "inhalant-frequency" : 2, "pain-releiver-use" : 9, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.3, "oxycontin-frequency" : 13.5, "tranquilizer-use" : 3.9, "tranquilizer-frequency" : 7, "stimulant-use" : 4.1, "stimulant-frequency" : 10, "meth-use" : 0.6, "meth-frequency" : 2, "sedative-use" : 0.3, "sedative-frequency" : 9 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b3"), "age" : "22-23", "n" : 4707, "alcohol-use" : 84.2, "alcohol-frequency" : 52, "marijuana-use" : 28.4, "marijuana-frequency" : 52, "cocaine-use" : 4.5, "cocaine-frequency" : 5, "crack-use" : 0.5, "crack-frequency" : 5, "heroin-use" : 1.1, "heroin-frequency" : 57.5, "hallucinogen-use" : 5.2, "hallucinogen-frequency" : 3, "inhalant-use" : 1, "inhalant-frequency" : 4, "pain-releiver-use" : 10, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.7, "oxycontin-frequency" : 17.5, "tranquilizer-use" : 4.4, "tranquilizer-frequency" : 12, "stimulant-use" : 3.6, "stimulant-frequency" : 10, "meth-use" : 0.6, "meth-frequency" : 46, "sedative-use" : 0.2, "sedative-frequency" : 52 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b4"), "age" : "24-25", "n" : 4591, "alcohol-use" : 83.1, "alcohol-frequency" : 52, "marijuana-use" : 24.9, "marijuana-frequency" : 60, "cocaine-use" : 4, "cocaine-frequency" : 6, "crack-use" : 0.5, "crack-frequency" : 6, "heroin-use" : 0.7, "heroin-frequency" : 88, "hallucinogen-use" : 4.5, "hallucinogen-frequency" : 2, "inhalant-use" : 0.8, "inhalant-frequency" : 2, "pain-releiver-use" : 9, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.3, "oxycontin-frequency" : 20, "tranquilizer-use" : 4.3, "tranquilizer-frequency" : 10, "stimulant-use" : 2.6, "stimulant-frequency" : 10, "meth-use" : 0.7, "meth-frequency" : 21, "sedative-use" : 0.2, "sedative-frequency" : 17.5 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b5"), "age" : "26-29", "n" : 2628, "alcohol-use" : 80.7, "alcohol-frequency" : 52, "marijuana-use" : 20.8, "marijuana-frequency" : 52, "cocaine-use" : 3.2, "cocaine-frequency" : 5, "crack-use" : 0.4, "crack-frequency" : 6, "heroin-use" : 0.6, "heroin-frequency" : 50, "hallucinogen-use" : 3.2, "hallucinogen-frequency" : 3, "inhalant-use" : 0.6, "inhalant-frequency" : 4, "pain-releiver-use" : 8.3, "pain-releiver-frequency" : 13, "oxycontin-use" : 1.2, "oxycontin-frequency" : 13.5, "tranquilizer-use" : 4.2, "tranquilizer-frequency" : 10, "stimulant-use" : 2.3, "stimulant-frequency" : 7, "meth-use" : 0.6, "meth-frequency" : 30, "sedative-use" : 0.4, "sedative-frequency" : 4 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b6"), "age" : "30-34", "n" : 2864, "alcohol-use" : 77.5, "alcohol-frequency" : 52, "marijuana-use" : 16.4, "marijuana-frequency" : 72, "cocaine-use" : 2.1, "cocaine-frequency" : 8, "crack-use" : 0.5, "crack-frequency" : 15, "heroin-use" : 0.4, "heroin-frequency" : 66, "hallucinogen-use" : 1.8, "hallucinogen-frequency" : 2, "inhalant-use" : 0.4, "inhalant-frequency" : 3.5, "pain-releiver-use" : 5.9, "pain-releiver-frequency" : 22, "oxycontin-use" : 0.9, "oxycontin-frequency" : 46, "tranquilizer-use" : 3.6, "tranquilizer-frequency" : 8, "stimulant-use" : 1.4, "stimulant-frequency" : 12, "meth-use" : 0.4, "meth-frequency" : 54, "sedative-use" : 0.4, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b7"), "age" : "35-49", "n" : 7391, "alcohol-use" : 75, "alcohol-frequency" : 52, "marijuana-use" : 10.4, "marijuana-frequency" : 48, "cocaine-use" : 1.5, "cocaine-frequency" : 15, "crack-use" : 0.5, "crack-frequency" : 48, "heroin-use" : 0.1, "heroin-frequency" : 280, "hallucinogen-use" : 0.6, "hallucinogen-frequency" : 3, "inhalant-use" : 0.3, "inhalant-frequency" : 10, "pain-releiver-use" : 4.2, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.3, "oxycontin-frequency" : 12, "tranquilizer-use" : 1.9, "tranquilizer-frequency" : 6, "stimulant-use" : 0.6, "stimulant-frequency" : 24, "meth-use" : 0.2, "meth-frequency" : 104, "sedative-use" : 0.3, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b8"), "age" : "50-64", "n" : 3923, "alcohol-use" : 67.2, "alcohol-frequency" : 52, "marijuana-use" : 7.3, "marijuana-frequency" : 52, "cocaine-use" : 0.9, "cocaine-frequency" : 36, "crack-use" : 0.4, "crack-frequency" : 62, "heroin-use" : 0.1, "heroin-frequency" : 41, "hallucinogen-use" : 0.3, "hallucinogen-frequency" : 44, "inhalant-use" : 0.2, "inhalant-frequency" : 13.5, "pain-releiver-use" : 2.5, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.4, "oxycontin-frequency" : 5, "tranquilizer-use" : 1.4, "tranquilizer-frequency" : 10, "stimulant-use" : 0.3, "stimulant-frequency" : 24, "meth-use" : 0.2, "meth-frequency" : 30, "sedative-use" : 0.2, "sedative-frequency" : 104 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b9"), "age" : "65+", "n" : 2448, "alcohol-use" : 49.3, "alcohol-frequency" : 52, "marijuana-use" : 1.2, "marijuana-frequency" : 36, "cocaine-use" : 0, "cocaine-frequency" : "", "crack-use" : 0, "crack-frequency" : "", "heroin-use" : 0, "heroin-frequency" : 120, "hallucinogen-use" : 0.1, "hallucinogen-frequency" : 2, "inhalant-use" : 0, "inhalant-frequency" : "", "pain-releiver-use" : 0.6, "pain-releiver-frequency" : 24, "oxycontin-use" : 0, "oxycontin-frequency" : "-", "tranquilizer-use" : 0.2, "tranquilizer-frequency" : 5, "stimulant-use" : 0, "stimulant-frequency" : 364, "meth-use" : 0, "meth-frequency" : "-", "sedative-use" : 0, "sedative-frequency" : 15 }
+> db.inventory.find({"n":{$type:1}})
+> db.inventory.find({"age":{$type:2}})
+{ "_id" : ObjectId("607d2ff93da03793b65c40b3"), "age" : "22-23", "n" : 4707, "alcohol-use" : 84.2, "alcohol-frequency" : 52, "marijuana-use" : 28.4, "marijuana-frequency" : 52, "cocaine-use" : 4.5, "cocaine-frequency" : 5, "crack-use" : 0.5, "crack-frequency" : 5, "heroin-use" : 1.1, "heroin-frequency" : 57.5, "hallucinogen-use" : 5.2, "hallucinogen-frequency" : 3, "inhalant-use" : 1, "inhalant-frequency" : 4, "pain-releiver-use" : 10, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.7, "oxycontin-frequency" : 17.5, "tranquilizer-use" : 4.4, "tranquilizer-frequency" : 12, "stimulant-use" : 3.6, "stimulant-frequency" : 10, "meth-use" : 0.6, "meth-frequency" : 46, "sedative-use" : 0.2, "sedative-frequency" : 52 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b4"), "age" : "24-25", "n" : 4591, "alcohol-use" : 83.1, "alcohol-frequency" : 52, "marijuana-use" : 24.9, "marijuana-frequency" : 60, "cocaine-use" : 4, "cocaine-frequency" : 6, "crack-use" : 0.5, "crack-frequency" : 6, "heroin-use" : 0.7, "heroin-frequency" : 88, "hallucinogen-use" : 4.5, "hallucinogen-frequency" : 2, "inhalant-use" : 0.8, "inhalant-frequency" : 2, "pain-releiver-use" : 9, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.3, "oxycontin-frequency" : 20, "tranquilizer-use" : 4.3, "tranquilizer-frequency" : 10, "stimulant-use" : 2.6, "stimulant-frequency" : 10, "meth-use" : 0.7, "meth-frequency" : 21, "sedative-use" : 0.2, "sedative-frequency" : 17.5 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b5"), "age" : "26-29", "n" : 2628, "alcohol-use" : 80.7, "alcohol-frequency" : 52, "marijuana-use" : 20.8, "marijuana-frequency" : 52, "cocaine-use" : 3.2, "cocaine-frequency" : 5, "crack-use" : 0.4, "crack-frequency" : 6, "heroin-use" : 0.6, "heroin-frequency" : 50, "hallucinogen-use" : 3.2, "hallucinogen-frequency" : 3, "inhalant-use" : 0.6, "inhalant-frequency" : 4, "pain-releiver-use" : 8.3, "pain-releiver-frequency" : 13, "oxycontin-use" : 1.2, "oxycontin-frequency" : 13.5, "tranquilizer-use" : 4.2, "tranquilizer-frequency" : 10, "stimulant-use" : 2.3, "stimulant-frequency" : 7, "meth-use" : 0.6, "meth-frequency" : 30, "sedative-use" : 0.4, "sedative-frequency" : 4 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b6"), "age" : "30-34", "n" : 2864, "alcohol-use" : 77.5, "alcohol-frequency" : 52, "marijuana-use" : 16.4, "marijuana-frequency" : 72, "cocaine-use" : 2.1, "cocaine-frequency" : 8, "crack-use" : 0.5, "crack-frequency" : 15, "heroin-use" : 0.4, "heroin-frequency" : 66, "hallucinogen-use" : 1.8, "hallucinogen-frequency" : 2, "inhalant-use" : 0.4, "inhalant-frequency" : 3.5, "pain-releiver-use" : 5.9, "pain-releiver-frequency" : 22, "oxycontin-use" : 0.9, "oxycontin-frequency" : 46, "tranquilizer-use" : 3.6, "tranquilizer-frequency" : 8, "stimulant-use" : 1.4, "stimulant-frequency" : 12, "meth-use" : 0.4, "meth-frequency" : 54, "sedative-use" : 0.4, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b7"), "age" : "35-49", "n" : 7391, "alcohol-use" : 75, "alcohol-frequency" : 52, "marijuana-use" : 10.4, "marijuana-frequency" : 48, "cocaine-use" : 1.5, "cocaine-frequency" : 15, "crack-use" : 0.5, "crack-frequency" : 48, "heroin-use" : 0.1, "heroin-frequency" : 280, "hallucinogen-use" : 0.6, "hallucinogen-frequency" : 3, "inhalant-use" : 0.3, "inhalant-frequency" : 10, "pain-releiver-use" : 4.2, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.3, "oxycontin-frequency" : 12, "tranquilizer-use" : 1.9, "tranquilizer-frequency" : 6, "stimulant-use" : 0.6, "stimulant-frequency" : 24, "meth-use" : 0.2, "meth-frequency" : 104, "sedative-use" : 0.3, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b8"), "age" : "50-64", "n" : 3923, "alcohol-use" : 67.2, "alcohol-frequency" : 52, "marijuana-use" : 7.3, "marijuana-frequency" : 52, "cocaine-use" : 0.9, "cocaine-frequency" : 36, "crack-use" : 0.4, "crack-frequency" : 62, "heroin-use" : 0.1, "heroin-frequency" : 41, "hallucinogen-use" : 0.3, "hallucinogen-frequency" : 44, "inhalant-use" : 0.2, "inhalant-frequency" : 13.5, "pain-releiver-use" : 2.5, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.4, "oxycontin-frequency" : 5, "tranquilizer-use" : 1.4, "tranquilizer-frequency" : 10, "stimulant-use" : 0.3, "stimulant-frequency" : 24, "meth-use" : 0.2, "meth-frequency" : 30, "sedative-use" : 0.2, "sedative-frequency" : 104 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b9"), "age" : "65+", "n" : 2448, "alcohol-use" : 49.3, "alcohol-frequency" : 52, "marijuana-use" : 1.2, "marijuana-frequency" : 36, "cocaine-use" : 0, "cocaine-frequency" : "", "crack-use" : 0, "crack-frequency" : "", "heroin-use" : 0, "heroin-frequency" : 120, "hallucinogen-use" : 0.1, "hallucinogen-frequency" : 2, "inhalant-use" : 0, "inhalant-frequency" : "", "pain-releiver-use" : 0.6, "pain-releiver-frequency" : 24, "oxycontin-use" : 0, "oxycontin-frequency" : "-", "tranquilizer-use" : 0.2, "tranquilizer-frequency" : 5, "stimulant-use" : 0, "stimulant-frequency" : 364, "meth-use" : 0, "meth-frequency" : "-", "sedative-use" : 0, "sedative-frequency" : 15 }
+> db.inventory.find({"age":{$regex:"e"}})
+> db.inventory.find({"age":{$regex:"20"}})
+> db.inventory.find({"age":{$regex:"-"}})
+{ "_id" : ObjectId("607d2ff93da03793b65c40b3"), "age" : "22-23", "n" : 4707, "alcohol-use" : 84.2, "alcohol-frequency" : 52, "marijuana-use" : 28.4, "marijuana-frequency" : 52, "cocaine-use" : 4.5, "cocaine-frequency" : 5, "crack-use" : 0.5, "crack-frequency" : 5, "heroin-use" : 1.1, "heroin-frequency" : 57.5, "hallucinogen-use" : 5.2, "hallucinogen-frequency" : 3, "inhalant-use" : 1, "inhalant-frequency" : 4, "pain-releiver-use" : 10, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.7, "oxycontin-frequency" : 17.5, "tranquilizer-use" : 4.4, "tranquilizer-frequency" : 12, "stimulant-use" : 3.6, "stimulant-frequency" : 10, "meth-use" : 0.6, "meth-frequency" : 46, "sedative-use" : 0.2, "sedative-frequency" : 52 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b4"), "age" : "24-25", "n" : 4591, "alcohol-use" : 83.1, "alcohol-frequency" : 52, "marijuana-use" : 24.9, "marijuana-frequency" : 60, "cocaine-use" : 4, "cocaine-frequency" : 6, "crack-use" : 0.5, "crack-frequency" : 6, "heroin-use" : 0.7, "heroin-frequency" : 88, "hallucinogen-use" : 4.5, "hallucinogen-frequency" : 2, "inhalant-use" : 0.8, "inhalant-frequency" : 2, "pain-releiver-use" : 9, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.3, "oxycontin-frequency" : 20, "tranquilizer-use" : 4.3, "tranquilizer-frequency" : 10, "stimulant-use" : 2.6, "stimulant-frequency" : 10, "meth-use" : 0.7, "meth-frequency" : 21, "sedative-use" : 0.2, "sedative-frequency" : 17.5 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b5"), "age" : "26-29", "n" : 2628, "alcohol-use" : 80.7, "alcohol-frequency" : 52, "marijuana-use" : 20.8, "marijuana-frequency" : 52, "cocaine-use" : 3.2, "cocaine-frequency" : 5, "crack-use" : 0.4, "crack-frequency" : 6, "heroin-use" : 0.6, "heroin-frequency" : 50, "hallucinogen-use" : 3.2, "hallucinogen-frequency" : 3, "inhalant-use" : 0.6, "inhalant-frequency" : 4, "pain-releiver-use" : 8.3, "pain-releiver-frequency" : 13, "oxycontin-use" : 1.2, "oxycontin-frequency" : 13.5, "tranquilizer-use" : 4.2, "tranquilizer-frequency" : 10, "stimulant-use" : 2.3, "stimulant-frequency" : 7, "meth-use" : 0.6, "meth-frequency" : 30, "sedative-use" : 0.4, "sedative-frequency" : 4 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b6"), "age" : "30-34", "n" : 2864, "alcohol-use" : 77.5, "alcohol-frequency" : 52, "marijuana-use" : 16.4, "marijuana-frequency" : 72, "cocaine-use" : 2.1, "cocaine-frequency" : 8, "crack-use" : 0.5, "crack-frequency" : 15, "heroin-use" : 0.4, "heroin-frequency" : 66, "hallucinogen-use" : 1.8, "hallucinogen-frequency" : 2, "inhalant-use" : 0.4, "inhalant-frequency" : 3.5, "pain-releiver-use" : 5.9, "pain-releiver-frequency" : 22, "oxycontin-use" : 0.9, "oxycontin-frequency" : 46, "tranquilizer-use" : 3.6, "tranquilizer-frequency" : 8, "stimulant-use" : 1.4, "stimulant-frequency" : 12, "meth-use" : 0.4, "meth-frequency" : 54, "sedative-use" : 0.4, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b7"), "age" : "35-49", "n" : 7391, "alcohol-use" : 75, "alcohol-frequency" : 52, "marijuana-use" : 10.4, "marijuana-frequency" : 48, "cocaine-use" : 1.5, "cocaine-frequency" : 15, "crack-use" : 0.5, "crack-frequency" : 48, "heroin-use" : 0.1, "heroin-frequency" : 280, "hallucinogen-use" : 0.6, "hallucinogen-frequency" : 3, "inhalant-use" : 0.3, "inhalant-frequency" : 10, "pain-releiver-use" : 4.2, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.3, "oxycontin-frequency" : 12, "tranquilizer-use" : 1.9, "tranquilizer-frequency" : 6, "stimulant-use" : 0.6, "stimulant-frequency" : 24, "meth-use" : 0.2, "meth-frequency" : 104, "sedative-use" : 0.3, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b8"), "age" : "50-64", "n" : 3923, "alcohol-use" : 67.2, "alcohol-frequency" : 52, "marijuana-use" : 7.3, "marijuana-frequency" : 52, "cocaine-use" : 0.9, "cocaine-frequency" : 36, "crack-use" : 0.4, "crack-frequency" : 62, "heroin-use" : 0.1, "heroin-frequency" : 41, "hallucinogen-use" : 0.3, "hallucinogen-frequency" : 44, "inhalant-use" : 0.2, "inhalant-frequency" : 13.5, "pain-releiver-use" : 2.5, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.4, "oxycontin-frequency" : 5, "tranquilizer-use" : 1.4, "tranquilizer-frequency" : 10, "stimulant-use" : 0.3, "stimulant-frequency" : 24, "meth-use" : 0.2, "meth-frequency" : 30, "sedative-use" : 0.2, "sedative-frequency" : 104 }
+> 
+
+db.inventory.find().pretty()
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40a9"),
+	"age" : 12,
+	"n" : 2798,
+	"alcohol-use" : 3.9,
+	"alcohol-frequency" : 3,
+	"marijuana-use" : 1.1,
+	"marijuana-frequency" : 4,
+	"cocaine-use" : 0.1,
+	"cocaine-frequency" : 5,
+	"crack-use" : 0,
+	"crack-frequency" : "",
+	"heroin-use" : 0.1,
+	"heroin-frequency" : 35.5,
+	"hallucinogen-use" : 0.2,
+	"hallucinogen-frequency" : 52,
+	"inhalant-use" : 1.6,
+	"inhalant-frequency" : 19,
+	"pain-releiver-use" : 2,
+	"pain-releiver-frequency" : 36,
+	"oxycontin-use" : 0.1,
+	"oxycontin-frequency" : 24.5,
+	"tranquilizer-use" : 0.2,
+	"tranquilizer-frequency" : 52,
+	"stimulant-use" : 0.2,
+	"stimulant-frequency" : 2,
+	"meth-use" : 0,
+	"meth-frequency" : "-",
+	"sedative-use" : 0.2,
+	"sedative-frequency" : 13
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40aa"),
+	"age" : 13,
+	"n" : 2757,
+	"alcohol-use" : 8.5,
+	"alcohol-frequency" : 6,
+	"marijuana-use" : 3.4,
+	"marijuana-frequency" : 15,
+	"cocaine-use" : 0.1,
+	"cocaine-frequency" : 1,
+	"crack-use" : 0,
+	"crack-frequency" : 3,
+	"heroin-use" : 0,
+	"heroin-frequency" : "",
+	"hallucinogen-use" : 0.6,
+	"hallucinogen-frequency" : 6,
+	"inhalant-use" : 2.5,
+	"inhalant-frequency" : 12,
+	"pain-releiver-use" : 2.4,
+	"pain-releiver-frequency" : 14,
+	"oxycontin-use" : 0.1,
+	"oxycontin-frequency" : 41,
+	"tranquilizer-use" : 0.3,
+	"tranquilizer-frequency" : 25.5,
+	"stimulant-use" : 0.3,
+	"stimulant-frequency" : 4,
+	"meth-use" : 0.1,
+	"meth-frequency" : 5,
+	"sedative-use" : 0.1,
+	"sedative-frequency" : 19
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40ab"),
+	"age" : 14,
+	"n" : 2792,
+	"alcohol-use" : 18.1,
+	"alcohol-frequency" : 5,
+	"marijuana-use" : 8.7,
+	"marijuana-frequency" : 24,
+	"cocaine-use" : 0.1,
+	"cocaine-frequency" : 5.5,
+	"crack-use" : 0,
+	"crack-frequency" : "",
+	"heroin-use" : 0.1,
+	"heroin-frequency" : 2,
+	"hallucinogen-use" : 1.6,
+	"hallucinogen-frequency" : 3,
+	"inhalant-use" : 2.6,
+	"inhalant-frequency" : 5,
+	"pain-releiver-use" : 3.9,
+	"pain-releiver-frequency" : 12,
+	"oxycontin-use" : 0.4,
+	"oxycontin-frequency" : 4.5,
+	"tranquilizer-use" : 0.9,
+	"tranquilizer-frequency" : 5,
+	"stimulant-use" : 0.8,
+	"stimulant-frequency" : 12,
+	"meth-use" : 0.1,
+	"meth-frequency" : 24,
+	"sedative-use" : 0.2,
+	"sedative-frequency" : 16.5
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40ac"),
+	"age" : 15,
+	"n" : 2956,
+	"alcohol-use" : 29.2,
+	"alcohol-frequency" : 6,
+	"marijuana-use" : 14.5,
+	"marijuana-frequency" : 25,
+	"cocaine-use" : 0.5,
+	"cocaine-frequency" : 4,
+	"crack-use" : 0.1,
+	"crack-frequency" : 9.5,
+	"heroin-use" : 0.2,
+	"heroin-frequency" : 1,
+	"hallucinogen-use" : 2.1,
+	"hallucinogen-frequency" : 4,
+	"inhalant-use" : 2.5,
+	"inhalant-frequency" : 5.5,
+	"pain-releiver-use" : 5.5,
+	"pain-releiver-frequency" : 10,
+	"oxycontin-use" : 0.8,
+	"oxycontin-frequency" : 3,
+	"tranquilizer-use" : 2,
+	"tranquilizer-frequency" : 4.5,
+	"stimulant-use" : 1.5,
+	"stimulant-frequency" : 6,
+	"meth-use" : 0.3,
+	"meth-frequency" : 10.5,
+	"sedative-use" : 0.4,
+	"sedative-frequency" : 30
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40ad"),
+	"age" : 16,
+	"n" : 3058,
+	"alcohol-use" : 40.1,
+	"alcohol-frequency" : 10,
+	"marijuana-use" : 22.5,
+	"marijuana-frequency" : 30,
+	"cocaine-use" : 1,
+	"cocaine-frequency" : 7,
+	"crack-use" : 0,
+	"crack-frequency" : 1,
+	"heroin-use" : 0.1,
+	"heroin-frequency" : 66.5,
+	"hallucinogen-use" : 3.4,
+	"hallucinogen-frequency" : 3,
+	"inhalant-use" : 3,
+	"inhalant-frequency" : 3,
+	"pain-releiver-use" : 6.2,
+	"pain-releiver-frequency" : 7,
+	"oxycontin-use" : 1.1,
+	"oxycontin-frequency" : 4,
+	"tranquilizer-use" : 2.4,
+	"tranquilizer-frequency" : 11,
+	"stimulant-use" : 1.8,
+	"stimulant-frequency" : 9.5,
+	"meth-use" : 0.3,
+	"meth-frequency" : 36,
+	"sedative-use" : 0.2,
+	"sedative-frequency" : 3
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40ae"),
+	"age" : 17,
+	"n" : 3038,
+	"alcohol-use" : 49.3,
+	"alcohol-frequency" : 13,
+	"marijuana-use" : 28,
+	"marijuana-frequency" : 36,
+	"cocaine-use" : 2,
+	"cocaine-frequency" : 5,
+	"crack-use" : 0.1,
+	"crack-frequency" : 21,
+	"heroin-use" : 0.1,
+	"heroin-frequency" : 64,
+	"hallucinogen-use" : 4.8,
+	"hallucinogen-frequency" : 3,
+	"inhalant-use" : 2,
+	"inhalant-frequency" : 4,
+	"pain-releiver-use" : 8.5,
+	"pain-releiver-frequency" : 9,
+	"oxycontin-use" : 1.4,
+	"oxycontin-frequency" : 6,
+	"tranquilizer-use" : 3.5,
+	"tranquilizer-frequency" : 7,
+	"stimulant-use" : 2.8,
+	"stimulant-frequency" : 9,
+	"meth-use" : 0.6,
+	"meth-frequency" : 48,
+	"sedative-use" : 0.5,
+	"sedative-frequency" : 6.5
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40af"),
+	"age" : 18,
+	"n" : 2469,
+	"alcohol-use" : 58.7,
+	"alcohol-frequency" : 24,
+	"marijuana-use" : 33.7,
+	"marijuana-frequency" : 52,
+	"cocaine-use" : 3.2,
+	"cocaine-frequency" : 5,
+	"crack-use" : 0.4,
+	"crack-frequency" : 10,
+	"heroin-use" : 0.4,
+	"heroin-frequency" : 46,
+	"hallucinogen-use" : 7,
+	"hallucinogen-frequency" : 4,
+	"inhalant-use" : 1.8,
+	"inhalant-frequency" : 4,
+	"pain-releiver-use" : 9.2,
+	"pain-releiver-frequency" : 12,
+	"oxycontin-use" : 1.7,
+	"oxycontin-frequency" : 7,
+	"tranquilizer-use" : 4.9,
+	"tranquilizer-frequency" : 12,
+	"stimulant-use" : 3,
+	"stimulant-frequency" : 8,
+	"meth-use" : 0.5,
+	"meth-frequency" : 12,
+	"sedative-use" : 0.4,
+	"sedative-frequency" : 10
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40b0"),
+	"age" : 19,
+	"n" : 2223,
+	"alcohol-use" : 64.6,
+	"alcohol-frequency" : 36,
+	"marijuana-use" : 33.4,
+	"marijuana-frequency" : 60,
+	"cocaine-use" : 4.1,
+	"cocaine-frequency" : 5.5,
+	"crack-use" : 0.5,
+	"crack-frequency" : 2,
+	"heroin-use" : 0.5,
+	"heroin-frequency" : 180,
+	"hallucinogen-use" : 8.6,
+	"hallucinogen-frequency" : 3,
+	"inhalant-use" : 1.4,
+	"inhalant-frequency" : 3,
+	"pain-releiver-use" : 9.4,
+	"pain-releiver-frequency" : 12,
+	"oxycontin-use" : 1.5,
+	"oxycontin-frequency" : 7.5,
+	"tranquilizer-use" : 4.2,
+	"tranquilizer-frequency" : 4.5,
+	"stimulant-use" : 3.3,
+	"stimulant-frequency" : 6,
+	"meth-use" : 0.4,
+	"meth-frequency" : 105,
+	"sedative-use" : 0.3,
+	"sedative-frequency" : 6
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40b1"),
+	"age" : 20,
+	"n" : 2271,
+	"alcohol-use" : 69.7,
+	"alcohol-frequency" : 48,
+	"marijuana-use" : 34,
+	"marijuana-frequency" : 60,
+	"cocaine-use" : 4.9,
+	"cocaine-frequency" : 8,
+	"crack-use" : 0.6,
+	"crack-frequency" : 5,
+	"heroin-use" : 0.9,
+	"heroin-frequency" : 45,
+	"hallucinogen-use" : 7.4,
+	"hallucinogen-frequency" : 2,
+	"inhalant-use" : 1.5,
+	"inhalant-frequency" : 4,
+	"pain-releiver-use" : 10,
+	"pain-releiver-frequency" : 10,
+	"oxycontin-use" : 1.7,
+	"oxycontin-frequency" : 12,
+	"tranquilizer-use" : 5.4,
+	"tranquilizer-frequency" : 10,
+	"stimulant-use" : 4,
+	"stimulant-frequency" : 12,
+	"meth-use" : 0.9,
+	"meth-frequency" : 12,
+	"sedative-use" : 0.5,
+	"sedative-frequency" : 4
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40b2"),
+	"age" : 21,
+	"n" : 2354,
+	"alcohol-use" : 83.2,
+	"alcohol-frequency" : 52,
+	"marijuana-use" : 33,
+	"marijuana-frequency" : 52,
+	"cocaine-use" : 4.8,
+	"cocaine-frequency" : 5,
+	"crack-use" : 0.5,
+	"crack-frequency" : 17,
+	"heroin-use" : 0.6,
+	"heroin-frequency" : 30,
+	"hallucinogen-use" : 6.3,
+	"hallucinogen-frequency" : 4,
+	"inhalant-use" : 1.4,
+	"inhalant-frequency" : 2,
+	"pain-releiver-use" : 9,
+	"pain-releiver-frequency" : 15,
+	"oxycontin-use" : 1.3,
+	"oxycontin-frequency" : 13.5,
+	"tranquilizer-use" : 3.9,
+	"tranquilizer-frequency" : 7,
+	"stimulant-use" : 4.1,
+	"stimulant-frequency" : 10,
+	"meth-use" : 0.6,
+	"meth-frequency" : 2,
+	"sedative-use" : 0.3,
+	"sedative-frequency" : 9
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40b3"),
+	"age" : "22-23",
+	"n" : 4707,
+	"alcohol-use" : 84.2,
+	"alcohol-frequency" : 52,
+	"marijuana-use" : 28.4,
+	"marijuana-frequency" : 52,
+	"cocaine-use" : 4.5,
+	"cocaine-frequency" : 5,
+	"crack-use" : 0.5,
+	"crack-frequency" : 5,
+	"heroin-use" : 1.1,
+	"heroin-frequency" : 57.5,
+	"hallucinogen-use" : 5.2,
+	"hallucinogen-frequency" : 3,
+	"inhalant-use" : 1,
+	"inhalant-frequency" : 4,
+	"pain-releiver-use" : 10,
+	"pain-releiver-frequency" : 15,
+	"oxycontin-use" : 1.7,
+	"oxycontin-frequency" : 17.5,
+	"tranquilizer-use" : 4.4,
+	"tranquilizer-frequency" : 12,
+	"stimulant-use" : 3.6,
+	"stimulant-frequency" : 10,
+	"meth-use" : 0.6,
+	"meth-frequency" : 46,
+	"sedative-use" : 0.2,
+	"sedative-frequency" : 52
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40b4"),
+	"age" : "24-25",
+	"n" : 4591,
+	"alcohol-use" : 83.1,
+	"alcohol-frequency" : 52,
+	"marijuana-use" : 24.9,
+	"marijuana-frequency" : 60,
+	"cocaine-use" : 4,
+	"cocaine-frequency" : 6,
+	"crack-use" : 0.5,
+	"crack-frequency" : 6,
+	"heroin-use" : 0.7,
+	"heroin-frequency" : 88,
+	"hallucinogen-use" : 4.5,
+	"hallucinogen-frequency" : 2,
+	"inhalant-use" : 0.8,
+	"inhalant-frequency" : 2,
+	"pain-releiver-use" : 9,
+	"pain-releiver-frequency" : 15,
+	"oxycontin-use" : 1.3,
+	"oxycontin-frequency" : 20,
+	"tranquilizer-use" : 4.3,
+	"tranquilizer-frequency" : 10,
+	"stimulant-use" : 2.6,
+	"stimulant-frequency" : 10,
+	"meth-use" : 0.7,
+	"meth-frequency" : 21,
+	"sedative-use" : 0.2,
+	"sedative-frequency" : 17.5
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40b5"),
+	"age" : "26-29",
+	"n" : 2628,
+	"alcohol-use" : 80.7,
+	"alcohol-frequency" : 52,
+	"marijuana-use" : 20.8,
+	"marijuana-frequency" : 52,
+	"cocaine-use" : 3.2,
+	"cocaine-frequency" : 5,
+	"crack-use" : 0.4,
+	"crack-frequency" : 6,
+	"heroin-use" : 0.6,
+	"heroin-frequency" : 50,
+	"hallucinogen-use" : 3.2,
+	"hallucinogen-frequency" : 3,
+	"inhalant-use" : 0.6,
+	"inhalant-frequency" : 4,
+	"pain-releiver-use" : 8.3,
+	"pain-releiver-frequency" : 13,
+	"oxycontin-use" : 1.2,
+	"oxycontin-frequency" : 13.5,
+	"tranquilizer-use" : 4.2,
+	"tranquilizer-frequency" : 10,
+	"stimulant-use" : 2.3,
+	"stimulant-frequency" : 7,
+	"meth-use" : 0.6,
+	"meth-frequency" : 30,
+	"sedative-use" : 0.4,
+	"sedative-frequency" : 4
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40b6"),
+	"age" : "30-34",
+	"n" : 2864,
+	"alcohol-use" : 77.5,
+	"alcohol-frequency" : 52,
+	"marijuana-use" : 16.4,
+	"marijuana-frequency" : 72,
+	"cocaine-use" : 2.1,
+	"cocaine-frequency" : 8,
+	"crack-use" : 0.5,
+	"crack-frequency" : 15,
+	"heroin-use" : 0.4,
+	"heroin-frequency" : 66,
+	"hallucinogen-use" : 1.8,
+	"hallucinogen-frequency" : 2,
+	"inhalant-use" : 0.4,
+	"inhalant-frequency" : 3.5,
+	"pain-releiver-use" : 5.9,
+	"pain-releiver-frequency" : 22,
+	"oxycontin-use" : 0.9,
+	"oxycontin-frequency" : 46,
+	"tranquilizer-use" : 3.6,
+	"tranquilizer-frequency" : 8,
+	"stimulant-use" : 1.4,
+	"stimulant-frequency" : 12,
+	"meth-use" : 0.4,
+	"meth-frequency" : 54,
+	"sedative-use" : 0.4,
+	"sedative-frequency" : 10
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40b7"),
+	"age" : "35-49",
+	"n" : 7391,
+	"alcohol-use" : 75,
+	"alcohol-frequency" : 52,
+	"marijuana-use" : 10.4,
+	"marijuana-frequency" : 48,
+	"cocaine-use" : 1.5,
+	"cocaine-frequency" : 15,
+	"crack-use" : 0.5,
+	"crack-frequency" : 48,
+	"heroin-use" : 0.1,
+	"heroin-frequency" : 280,
+	"hallucinogen-use" : 0.6,
+	"hallucinogen-frequency" : 3,
+	"inhalant-use" : 0.3,
+	"inhalant-frequency" : 10,
+	"pain-releiver-use" : 4.2,
+	"pain-releiver-frequency" : 12,
+	"oxycontin-use" : 0.3,
+	"oxycontin-frequency" : 12,
+	"tranquilizer-use" : 1.9,
+	"tranquilizer-frequency" : 6,
+	"stimulant-use" : 0.6,
+	"stimulant-frequency" : 24,
+	"meth-use" : 0.2,
+	"meth-frequency" : 104,
+	"sedative-use" : 0.3,
+	"sedative-frequency" : 10
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40b8"),
+	"age" : "50-64",
+	"n" : 3923,
+	"alcohol-use" : 67.2,
+	"alcohol-frequency" : 52,
+	"marijuana-use" : 7.3,
+	"marijuana-frequency" : 52,
+	"cocaine-use" : 0.9,
+	"cocaine-frequency" : 36,
+	"crack-use" : 0.4,
+	"crack-frequency" : 62,
+	"heroin-use" : 0.1,
+	"heroin-frequency" : 41,
+	"hallucinogen-use" : 0.3,
+	"hallucinogen-frequency" : 44,
+	"inhalant-use" : 0.2,
+	"inhalant-frequency" : 13.5,
+	"pain-releiver-use" : 2.5,
+	"pain-releiver-frequency" : 12,
+	"oxycontin-use" : 0.4,
+	"oxycontin-frequency" : 5,
+	"tranquilizer-use" : 1.4,
+	"tranquilizer-frequency" : 10,
+	"stimulant-use" : 0.3,
+	"stimulant-frequency" : 24,
+	"meth-use" : 0.2,
+	"meth-frequency" : 30,
+	"sedative-use" : 0.2,
+	"sedative-frequency" : 104
+}
+{
+	"_id" : ObjectId("607d2ff93da03793b65c40b9"),
+	"age" : "65+",
+	"n" : 2448,
+	"alcohol-use" : 49.3,
+	"alcohol-frequency" : 52,
+	"marijuana-use" : 1.2,
+	"marijuana-frequency" : 36,
+	"cocaine-use" : 0,
+	"cocaine-frequency" : "",
+	"crack-use" : 0,
+	"crack-frequency" : "",
+	"heroin-use" : 0,
+	"heroin-frequency" : 120,
+	"hallucinogen-use" : 0.1,
+	"hallucinogen-frequency" : 2,
+	"inhalant-use" : 0,
+	"inhalant-frequency" : "",
+	"pain-releiver-use" : 0.6,
+	"pain-releiver-frequency" : 24,
+	"oxycontin-use" : 0,
+	"oxycontin-frequency" : "-",
+	"tranquilizer-use" : 0.2,
+	"tranquilizer-frequency" : 5,
+	"stimulant-use" : 0,
+	"stimulant-frequency" : 364,
+	"meth-use" : 0,
+	"meth-frequency" : "-",
+	"sedative-use" : 0,
+	"sedative-frequency" : 15
+}
+> db.inventory.update({"n":2448},{$set:{"n":12}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.inventory.find()
+{ "_id" : ObjectId("607d2ff93da03793b65c40a9"), "age" : 12, "n" : 2798, "alcohol-use" : 3.9, "alcohol-frequency" : 3, "marijuana-use" : 1.1, "marijuana-frequency" : 4, "cocaine-use" : 0.1, "cocaine-frequency" : 5, "crack-use" : 0, "crack-frequency" : "", "heroin-use" : 0.1, "heroin-frequency" : 35.5, "hallucinogen-use" : 0.2, "hallucinogen-frequency" : 52, "inhalant-use" : 1.6, "inhalant-frequency" : 19, "pain-releiver-use" : 2, "pain-releiver-frequency" : 36, "oxycontin-use" : 0.1, "oxycontin-frequency" : 24.5, "tranquilizer-use" : 0.2, "tranquilizer-frequency" : 52, "stimulant-use" : 0.2, "stimulant-frequency" : 2, "meth-use" : 0, "meth-frequency" : "-", "sedative-use" : 0.2, "sedative-frequency" : 13 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40aa"), "age" : 13, "n" : 2757, "alcohol-use" : 8.5, "alcohol-frequency" : 6, "marijuana-use" : 3.4, "marijuana-frequency" : 15, "cocaine-use" : 0.1, "cocaine-frequency" : 1, "crack-use" : 0, "crack-frequency" : 3, "heroin-use" : 0, "heroin-frequency" : "", "hallucinogen-use" : 0.6, "hallucinogen-frequency" : 6, "inhalant-use" : 2.5, "inhalant-frequency" : 12, "pain-releiver-use" : 2.4, "pain-releiver-frequency" : 14, "oxycontin-use" : 0.1, "oxycontin-frequency" : 41, "tranquilizer-use" : 0.3, "tranquilizer-frequency" : 25.5, "stimulant-use" : 0.3, "stimulant-frequency" : 4, "meth-use" : 0.1, "meth-frequency" : 5, "sedative-use" : 0.1, "sedative-frequency" : 19 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ab"), "age" : 14, "n" : 2792, "alcohol-use" : 18.1, "alcohol-frequency" : 5, "marijuana-use" : 8.7, "marijuana-frequency" : 24, "cocaine-use" : 0.1, "cocaine-frequency" : 5.5, "crack-use" : 0, "crack-frequency" : "", "heroin-use" : 0.1, "heroin-frequency" : 2, "hallucinogen-use" : 1.6, "hallucinogen-frequency" : 3, "inhalant-use" : 2.6, "inhalant-frequency" : 5, "pain-releiver-use" : 3.9, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.4, "oxycontin-frequency" : 4.5, "tranquilizer-use" : 0.9, "tranquilizer-frequency" : 5, "stimulant-use" : 0.8, "stimulant-frequency" : 12, "meth-use" : 0.1, "meth-frequency" : 24, "sedative-use" : 0.2, "sedative-frequency" : 16.5 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ac"), "age" : 15, "n" : 2956, "alcohol-use" : 29.2, "alcohol-frequency" : 6, "marijuana-use" : 14.5, "marijuana-frequency" : 25, "cocaine-use" : 0.5, "cocaine-frequency" : 4, "crack-use" : 0.1, "crack-frequency" : 9.5, "heroin-use" : 0.2, "heroin-frequency" : 1, "hallucinogen-use" : 2.1, "hallucinogen-frequency" : 4, "inhalant-use" : 2.5, "inhalant-frequency" : 5.5, "pain-releiver-use" : 5.5, "pain-releiver-frequency" : 10, "oxycontin-use" : 0.8, "oxycontin-frequency" : 3, "tranquilizer-use" : 2, "tranquilizer-frequency" : 4.5, "stimulant-use" : 1.5, "stimulant-frequency" : 6, "meth-use" : 0.3, "meth-frequency" : 10.5, "sedative-use" : 0.4, "sedative-frequency" : 30 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ad"), "age" : 16, "n" : 3058, "alcohol-use" : 40.1, "alcohol-frequency" : 10, "marijuana-use" : 22.5, "marijuana-frequency" : 30, "cocaine-use" : 1, "cocaine-frequency" : 7, "crack-use" : 0, "crack-frequency" : 1, "heroin-use" : 0.1, "heroin-frequency" : 66.5, "hallucinogen-use" : 3.4, "hallucinogen-frequency" : 3, "inhalant-use" : 3, "inhalant-frequency" : 3, "pain-releiver-use" : 6.2, "pain-releiver-frequency" : 7, "oxycontin-use" : 1.1, "oxycontin-frequency" : 4, "tranquilizer-use" : 2.4, "tranquilizer-frequency" : 11, "stimulant-use" : 1.8, "stimulant-frequency" : 9.5, "meth-use" : 0.3, "meth-frequency" : 36, "sedative-use" : 0.2, "sedative-frequency" : 3 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ae"), "age" : 17, "n" : 3038, "alcohol-use" : 49.3, "alcohol-frequency" : 13, "marijuana-use" : 28, "marijuana-frequency" : 36, "cocaine-use" : 2, "cocaine-frequency" : 5, "crack-use" : 0.1, "crack-frequency" : 21, "heroin-use" : 0.1, "heroin-frequency" : 64, "hallucinogen-use" : 4.8, "hallucinogen-frequency" : 3, "inhalant-use" : 2, "inhalant-frequency" : 4, "pain-releiver-use" : 8.5, "pain-releiver-frequency" : 9, "oxycontin-use" : 1.4, "oxycontin-frequency" : 6, "tranquilizer-use" : 3.5, "tranquilizer-frequency" : 7, "stimulant-use" : 2.8, "stimulant-frequency" : 9, "meth-use" : 0.6, "meth-frequency" : 48, "sedative-use" : 0.5, "sedative-frequency" : 6.5 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40af"), "age" : 18, "n" : 2469, "alcohol-use" : 58.7, "alcohol-frequency" : 24, "marijuana-use" : 33.7, "marijuana-frequency" : 52, "cocaine-use" : 3.2, "cocaine-frequency" : 5, "crack-use" : 0.4, "crack-frequency" : 10, "heroin-use" : 0.4, "heroin-frequency" : 46, "hallucinogen-use" : 7, "hallucinogen-frequency" : 4, "inhalant-use" : 1.8, "inhalant-frequency" : 4, "pain-releiver-use" : 9.2, "pain-releiver-frequency" : 12, "oxycontin-use" : 1.7, "oxycontin-frequency" : 7, "tranquilizer-use" : 4.9, "tranquilizer-frequency" : 12, "stimulant-use" : 3, "stimulant-frequency" : 8, "meth-use" : 0.5, "meth-frequency" : 12, "sedative-use" : 0.4, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b0"), "age" : 19, "n" : 2223, "alcohol-use" : 64.6, "alcohol-frequency" : 36, "marijuana-use" : 33.4, "marijuana-frequency" : 60, "cocaine-use" : 4.1, "cocaine-frequency" : 5.5, "crack-use" : 0.5, "crack-frequency" : 2, "heroin-use" : 0.5, "heroin-frequency" : 180, "hallucinogen-use" : 8.6, "hallucinogen-frequency" : 3, "inhalant-use" : 1.4, "inhalant-frequency" : 3, "pain-releiver-use" : 9.4, "pain-releiver-frequency" : 12, "oxycontin-use" : 1.5, "oxycontin-frequency" : 7.5, "tranquilizer-use" : 4.2, "tranquilizer-frequency" : 4.5, "stimulant-use" : 3.3, "stimulant-frequency" : 6, "meth-use" : 0.4, "meth-frequency" : 105, "sedative-use" : 0.3, "sedative-frequency" : 6 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b1"), "age" : 20, "n" : 2271, "alcohol-use" : 69.7, "alcohol-frequency" : 48, "marijuana-use" : 34, "marijuana-frequency" : 60, "cocaine-use" : 4.9, "cocaine-frequency" : 8, "crack-use" : 0.6, "crack-frequency" : 5, "heroin-use" : 0.9, "heroin-frequency" : 45, "hallucinogen-use" : 7.4, "hallucinogen-frequency" : 2, "inhalant-use" : 1.5, "inhalant-frequency" : 4, "pain-releiver-use" : 10, "pain-releiver-frequency" : 10, "oxycontin-use" : 1.7, "oxycontin-frequency" : 12, "tranquilizer-use" : 5.4, "tranquilizer-frequency" : 10, "stimulant-use" : 4, "stimulant-frequency" : 12, "meth-use" : 0.9, "meth-frequency" : 12, "sedative-use" : 0.5, "sedative-frequency" : 4 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b2"), "age" : 21, "n" : 2354, "alcohol-use" : 83.2, "alcohol-frequency" : 52, "marijuana-use" : 33, "marijuana-frequency" : 52, "cocaine-use" : 4.8, "cocaine-frequency" : 5, "crack-use" : 0.5, "crack-frequency" : 17, "heroin-use" : 0.6, "heroin-frequency" : 30, "hallucinogen-use" : 6.3, "hallucinogen-frequency" : 4, "inhalant-use" : 1.4, "inhalant-frequency" : 2, "pain-releiver-use" : 9, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.3, "oxycontin-frequency" : 13.5, "tranquilizer-use" : 3.9, "tranquilizer-frequency" : 7, "stimulant-use" : 4.1, "stimulant-frequency" : 10, "meth-use" : 0.6, "meth-frequency" : 2, "sedative-use" : 0.3, "sedative-frequency" : 9 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b3"), "age" : "22-23", "n" : 4707, "alcohol-use" : 84.2, "alcohol-frequency" : 52, "marijuana-use" : 28.4, "marijuana-frequency" : 52, "cocaine-use" : 4.5, "cocaine-frequency" : 5, "crack-use" : 0.5, "crack-frequency" : 5, "heroin-use" : 1.1, "heroin-frequency" : 57.5, "hallucinogen-use" : 5.2, "hallucinogen-frequency" : 3, "inhalant-use" : 1, "inhalant-frequency" : 4, "pain-releiver-use" : 10, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.7, "oxycontin-frequency" : 17.5, "tranquilizer-use" : 4.4, "tranquilizer-frequency" : 12, "stimulant-use" : 3.6, "stimulant-frequency" : 10, "meth-use" : 0.6, "meth-frequency" : 46, "sedative-use" : 0.2, "sedative-frequency" : 52 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b4"), "age" : "24-25", "n" : 4591, "alcohol-use" : 83.1, "alcohol-frequency" : 52, "marijuana-use" : 24.9, "marijuana-frequency" : 60, "cocaine-use" : 4, "cocaine-frequency" : 6, "crack-use" : 0.5, "crack-frequency" : 6, "heroin-use" : 0.7, "heroin-frequency" : 88, "hallucinogen-use" : 4.5, "hallucinogen-frequency" : 2, "inhalant-use" : 0.8, "inhalant-frequency" : 2, "pain-releiver-use" : 9, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.3, "oxycontin-frequency" : 20, "tranquilizer-use" : 4.3, "tranquilizer-frequency" : 10, "stimulant-use" : 2.6, "stimulant-frequency" : 10, "meth-use" : 0.7, "meth-frequency" : 21, "sedative-use" : 0.2, "sedative-frequency" : 17.5 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b5"), "age" : "26-29", "n" : 2628, "alcohol-use" : 80.7, "alcohol-frequency" : 52, "marijuana-use" : 20.8, "marijuana-frequency" : 52, "cocaine-use" : 3.2, "cocaine-frequency" : 5, "crack-use" : 0.4, "crack-frequency" : 6, "heroin-use" : 0.6, "heroin-frequency" : 50, "hallucinogen-use" : 3.2, "hallucinogen-frequency" : 3, "inhalant-use" : 0.6, "inhalant-frequency" : 4, "pain-releiver-use" : 8.3, "pain-releiver-frequency" : 13, "oxycontin-use" : 1.2, "oxycontin-frequency" : 13.5, "tranquilizer-use" : 4.2, "tranquilizer-frequency" : 10, "stimulant-use" : 2.3, "stimulant-frequency" : 7, "meth-use" : 0.6, "meth-frequency" : 30, "sedative-use" : 0.4, "sedative-frequency" : 4 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b6"), "age" : "30-34", "n" : 2864, "alcohol-use" : 77.5, "alcohol-frequency" : 52, "marijuana-use" : 16.4, "marijuana-frequency" : 72, "cocaine-use" : 2.1, "cocaine-frequency" : 8, "crack-use" : 0.5, "crack-frequency" : 15, "heroin-use" : 0.4, "heroin-frequency" : 66, "hallucinogen-use" : 1.8, "hallucinogen-frequency" : 2, "inhalant-use" : 0.4, "inhalant-frequency" : 3.5, "pain-releiver-use" : 5.9, "pain-releiver-frequency" : 22, "oxycontin-use" : 0.9, "oxycontin-frequency" : 46, "tranquilizer-use" : 3.6, "tranquilizer-frequency" : 8, "stimulant-use" : 1.4, "stimulant-frequency" : 12, "meth-use" : 0.4, "meth-frequency" : 54, "sedative-use" : 0.4, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b7"), "age" : "35-49", "n" : 7391, "alcohol-use" : 75, "alcohol-frequency" : 52, "marijuana-use" : 10.4, "marijuana-frequency" : 48, "cocaine-use" : 1.5, "cocaine-frequency" : 15, "crack-use" : 0.5, "crack-frequency" : 48, "heroin-use" : 0.1, "heroin-frequency" : 280, "hallucinogen-use" : 0.6, "hallucinogen-frequency" : 3, "inhalant-use" : 0.3, "inhalant-frequency" : 10, "pain-releiver-use" : 4.2, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.3, "oxycontin-frequency" : 12, "tranquilizer-use" : 1.9, "tranquilizer-frequency" : 6, "stimulant-use" : 0.6, "stimulant-frequency" : 24, "meth-use" : 0.2, "meth-frequency" : 104, "sedative-use" : 0.3, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b8"), "age" : "50-64", "n" : 3923, "alcohol-use" : 67.2, "alcohol-frequency" : 52, "marijuana-use" : 7.3, "marijuana-frequency" : 52, "cocaine-use" : 0.9, "cocaine-frequency" : 36, "crack-use" : 0.4, "crack-frequency" : 62, "heroin-use" : 0.1, "heroin-frequency" : 41, "hallucinogen-use" : 0.3, "hallucinogen-frequency" : 44, "inhalant-use" : 0.2, "inhalant-frequency" : 13.5, "pain-releiver-use" : 2.5, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.4, "oxycontin-frequency" : 5, "tranquilizer-use" : 1.4, "tranquilizer-frequency" : 10, "stimulant-use" : 0.3, "stimulant-frequency" : 24, "meth-use" : 0.2, "meth-frequency" : 30, "sedative-use" : 0.2, "sedative-frequency" : 104 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b9"), "age" : "65+", "n" : 12, "alcohol-use" : 49.3, "alcohol-frequency" : 52, "marijuana-use" : 1.2, "marijuana-frequency" : 36, "cocaine-use" : 0, "cocaine-frequency" : "", "crack-use" : 0, "crack-frequency" : "", "heroin-use" : 0, "heroin-frequency" : 120, "hallucinogen-use" : 0.1, "hallucinogen-frequency" : 2, "inhalant-use" : 0, "inhalant-frequency" : "", "pain-releiver-use" : 0.6, "pain-releiver-frequency" : 24, "oxycontin-use" : 0, "oxycontin-frequency" : "-", "tranquilizer-use" : 0.2, "tranquilizer-frequency" : 5, "stimulant-use" : 0, "stimulant-frequency" : 364, "meth-use" : 0, "meth-frequency" : "-", "sedative-use" : 0, "sedative-frequency" : 15 }
+> db.inventory.remove({"n":12})
+WriteResult({ "nRemoved" : 1 })
+> db.inventory.find()
+{ "_id" : ObjectId("607d2ff93da03793b65c40a9"), "age" : 12, "n" : 2798, "alcohol-use" : 3.9, "alcohol-frequency" : 3, "marijuana-use" : 1.1, "marijuana-frequency" : 4, "cocaine-use" : 0.1, "cocaine-frequency" : 5, "crack-use" : 0, "crack-frequency" : "", "heroin-use" : 0.1, "heroin-frequency" : 35.5, "hallucinogen-use" : 0.2, "hallucinogen-frequency" : 52, "inhalant-use" : 1.6, "inhalant-frequency" : 19, "pain-releiver-use" : 2, "pain-releiver-frequency" : 36, "oxycontin-use" : 0.1, "oxycontin-frequency" : 24.5, "tranquilizer-use" : 0.2, "tranquilizer-frequency" : 52, "stimulant-use" : 0.2, "stimulant-frequency" : 2, "meth-use" : 0, "meth-frequency" : "-", "sedative-use" : 0.2, "sedative-frequency" : 13 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40aa"), "age" : 13, "n" : 2757, "alcohol-use" : 8.5, "alcohol-frequency" : 6, "marijuana-use" : 3.4, "marijuana-frequency" : 15, "cocaine-use" : 0.1, "cocaine-frequency" : 1, "crack-use" : 0, "crack-frequency" : 3, "heroin-use" : 0, "heroin-frequency" : "", "hallucinogen-use" : 0.6, "hallucinogen-frequency" : 6, "inhalant-use" : 2.5, "inhalant-frequency" : 12, "pain-releiver-use" : 2.4, "pain-releiver-frequency" : 14, "oxycontin-use" : 0.1, "oxycontin-frequency" : 41, "tranquilizer-use" : 0.3, "tranquilizer-frequency" : 25.5, "stimulant-use" : 0.3, "stimulant-frequency" : 4, "meth-use" : 0.1, "meth-frequency" : 5, "sedative-use" : 0.1, "sedative-frequency" : 19 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ab"), "age" : 14, "n" : 2792, "alcohol-use" : 18.1, "alcohol-frequency" : 5, "marijuana-use" : 8.7, "marijuana-frequency" : 24, "cocaine-use" : 0.1, "cocaine-frequency" : 5.5, "crack-use" : 0, "crack-frequency" : "", "heroin-use" : 0.1, "heroin-frequency" : 2, "hallucinogen-use" : 1.6, "hallucinogen-frequency" : 3, "inhalant-use" : 2.6, "inhalant-frequency" : 5, "pain-releiver-use" : 3.9, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.4, "oxycontin-frequency" : 4.5, "tranquilizer-use" : 0.9, "tranquilizer-frequency" : 5, "stimulant-use" : 0.8, "stimulant-frequency" : 12, "meth-use" : 0.1, "meth-frequency" : 24, "sedative-use" : 0.2, "sedative-frequency" : 16.5 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ac"), "age" : 15, "n" : 2956, "alcohol-use" : 29.2, "alcohol-frequency" : 6, "marijuana-use" : 14.5, "marijuana-frequency" : 25, "cocaine-use" : 0.5, "cocaine-frequency" : 4, "crack-use" : 0.1, "crack-frequency" : 9.5, "heroin-use" : 0.2, "heroin-frequency" : 1, "hallucinogen-use" : 2.1, "hallucinogen-frequency" : 4, "inhalant-use" : 2.5, "inhalant-frequency" : 5.5, "pain-releiver-use" : 5.5, "pain-releiver-frequency" : 10, "oxycontin-use" : 0.8, "oxycontin-frequency" : 3, "tranquilizer-use" : 2, "tranquilizer-frequency" : 4.5, "stimulant-use" : 1.5, "stimulant-frequency" : 6, "meth-use" : 0.3, "meth-frequency" : 10.5, "sedative-use" : 0.4, "sedative-frequency" : 30 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ad"), "age" : 16, "n" : 3058, "alcohol-use" : 40.1, "alcohol-frequency" : 10, "marijuana-use" : 22.5, "marijuana-frequency" : 30, "cocaine-use" : 1, "cocaine-frequency" : 7, "crack-use" : 0, "crack-frequency" : 1, "heroin-use" : 0.1, "heroin-frequency" : 66.5, "hallucinogen-use" : 3.4, "hallucinogen-frequency" : 3, "inhalant-use" : 3, "inhalant-frequency" : 3, "pain-releiver-use" : 6.2, "pain-releiver-frequency" : 7, "oxycontin-use" : 1.1, "oxycontin-frequency" : 4, "tranquilizer-use" : 2.4, "tranquilizer-frequency" : 11, "stimulant-use" : 1.8, "stimulant-frequency" : 9.5, "meth-use" : 0.3, "meth-frequency" : 36, "sedative-use" : 0.2, "sedative-frequency" : 3 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40ae"), "age" : 17, "n" : 3038, "alcohol-use" : 49.3, "alcohol-frequency" : 13, "marijuana-use" : 28, "marijuana-frequency" : 36, "cocaine-use" : 2, "cocaine-frequency" : 5, "crack-use" : 0.1, "crack-frequency" : 21, "heroin-use" : 0.1, "heroin-frequency" : 64, "hallucinogen-use" : 4.8, "hallucinogen-frequency" : 3, "inhalant-use" : 2, "inhalant-frequency" : 4, "pain-releiver-use" : 8.5, "pain-releiver-frequency" : 9, "oxycontin-use" : 1.4, "oxycontin-frequency" : 6, "tranquilizer-use" : 3.5, "tranquilizer-frequency" : 7, "stimulant-use" : 2.8, "stimulant-frequency" : 9, "meth-use" : 0.6, "meth-frequency" : 48, "sedative-use" : 0.5, "sedative-frequency" : 6.5 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40af"), "age" : 18, "n" : 2469, "alcohol-use" : 58.7, "alcohol-frequency" : 24, "marijuana-use" : 33.7, "marijuana-frequency" : 52, "cocaine-use" : 3.2, "cocaine-frequency" : 5, "crack-use" : 0.4, "crack-frequency" : 10, "heroin-use" : 0.4, "heroin-frequency" : 46, "hallucinogen-use" : 7, "hallucinogen-frequency" : 4, "inhalant-use" : 1.8, "inhalant-frequency" : 4, "pain-releiver-use" : 9.2, "pain-releiver-frequency" : 12, "oxycontin-use" : 1.7, "oxycontin-frequency" : 7, "tranquilizer-use" : 4.9, "tranquilizer-frequency" : 12, "stimulant-use" : 3, "stimulant-frequency" : 8, "meth-use" : 0.5, "meth-frequency" : 12, "sedative-use" : 0.4, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b0"), "age" : 19, "n" : 2223, "alcohol-use" : 64.6, "alcohol-frequency" : 36, "marijuana-use" : 33.4, "marijuana-frequency" : 60, "cocaine-use" : 4.1, "cocaine-frequency" : 5.5, "crack-use" : 0.5, "crack-frequency" : 2, "heroin-use" : 0.5, "heroin-frequency" : 180, "hallucinogen-use" : 8.6, "hallucinogen-frequency" : 3, "inhalant-use" : 1.4, "inhalant-frequency" : 3, "pain-releiver-use" : 9.4, "pain-releiver-frequency" : 12, "oxycontin-use" : 1.5, "oxycontin-frequency" : 7.5, "tranquilizer-use" : 4.2, "tranquilizer-frequency" : 4.5, "stimulant-use" : 3.3, "stimulant-frequency" : 6, "meth-use" : 0.4, "meth-frequency" : 105, "sedative-use" : 0.3, "sedative-frequency" : 6 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b1"), "age" : 20, "n" : 2271, "alcohol-use" : 69.7, "alcohol-frequency" : 48, "marijuana-use" : 34, "marijuana-frequency" : 60, "cocaine-use" : 4.9, "cocaine-frequency" : 8, "crack-use" : 0.6, "crack-frequency" : 5, "heroin-use" : 0.9, "heroin-frequency" : 45, "hallucinogen-use" : 7.4, "hallucinogen-frequency" : 2, "inhalant-use" : 1.5, "inhalant-frequency" : 4, "pain-releiver-use" : 10, "pain-releiver-frequency" : 10, "oxycontin-use" : 1.7, "oxycontin-frequency" : 12, "tranquilizer-use" : 5.4, "tranquilizer-frequency" : 10, "stimulant-use" : 4, "stimulant-frequency" : 12, "meth-use" : 0.9, "meth-frequency" : 12, "sedative-use" : 0.5, "sedative-frequency" : 4 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b2"), "age" : 21, "n" : 2354, "alcohol-use" : 83.2, "alcohol-frequency" : 52, "marijuana-use" : 33, "marijuana-frequency" : 52, "cocaine-use" : 4.8, "cocaine-frequency" : 5, "crack-use" : 0.5, "crack-frequency" : 17, "heroin-use" : 0.6, "heroin-frequency" : 30, "hallucinogen-use" : 6.3, "hallucinogen-frequency" : 4, "inhalant-use" : 1.4, "inhalant-frequency" : 2, "pain-releiver-use" : 9, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.3, "oxycontin-frequency" : 13.5, "tranquilizer-use" : 3.9, "tranquilizer-frequency" : 7, "stimulant-use" : 4.1, "stimulant-frequency" : 10, "meth-use" : 0.6, "meth-frequency" : 2, "sedative-use" : 0.3, "sedative-frequency" : 9 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b3"), "age" : "22-23", "n" : 4707, "alcohol-use" : 84.2, "alcohol-frequency" : 52, "marijuana-use" : 28.4, "marijuana-frequency" : 52, "cocaine-use" : 4.5, "cocaine-frequency" : 5, "crack-use" : 0.5, "crack-frequency" : 5, "heroin-use" : 1.1, "heroin-frequency" : 57.5, "hallucinogen-use" : 5.2, "hallucinogen-frequency" : 3, "inhalant-use" : 1, "inhalant-frequency" : 4, "pain-releiver-use" : 10, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.7, "oxycontin-frequency" : 17.5, "tranquilizer-use" : 4.4, "tranquilizer-frequency" : 12, "stimulant-use" : 3.6, "stimulant-frequency" : 10, "meth-use" : 0.6, "meth-frequency" : 46, "sedative-use" : 0.2, "sedative-frequency" : 52 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b4"), "age" : "24-25", "n" : 4591, "alcohol-use" : 83.1, "alcohol-frequency" : 52, "marijuana-use" : 24.9, "marijuana-frequency" : 60, "cocaine-use" : 4, "cocaine-frequency" : 6, "crack-use" : 0.5, "crack-frequency" : 6, "heroin-use" : 0.7, "heroin-frequency" : 88, "hallucinogen-use" : 4.5, "hallucinogen-frequency" : 2, "inhalant-use" : 0.8, "inhalant-frequency" : 2, "pain-releiver-use" : 9, "pain-releiver-frequency" : 15, "oxycontin-use" : 1.3, "oxycontin-frequency" : 20, "tranquilizer-use" : 4.3, "tranquilizer-frequency" : 10, "stimulant-use" : 2.6, "stimulant-frequency" : 10, "meth-use" : 0.7, "meth-frequency" : 21, "sedative-use" : 0.2, "sedative-frequency" : 17.5 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b5"), "age" : "26-29", "n" : 2628, "alcohol-use" : 80.7, "alcohol-frequency" : 52, "marijuana-use" : 20.8, "marijuana-frequency" : 52, "cocaine-use" : 3.2, "cocaine-frequency" : 5, "crack-use" : 0.4, "crack-frequency" : 6, "heroin-use" : 0.6, "heroin-frequency" : 50, "hallucinogen-use" : 3.2, "hallucinogen-frequency" : 3, "inhalant-use" : 0.6, "inhalant-frequency" : 4, "pain-releiver-use" : 8.3, "pain-releiver-frequency" : 13, "oxycontin-use" : 1.2, "oxycontin-frequency" : 13.5, "tranquilizer-use" : 4.2, "tranquilizer-frequency" : 10, "stimulant-use" : 2.3, "stimulant-frequency" : 7, "meth-use" : 0.6, "meth-frequency" : 30, "sedative-use" : 0.4, "sedative-frequency" : 4 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b6"), "age" : "30-34", "n" : 2864, "alcohol-use" : 77.5, "alcohol-frequency" : 52, "marijuana-use" : 16.4, "marijuana-frequency" : 72, "cocaine-use" : 2.1, "cocaine-frequency" : 8, "crack-use" : 0.5, "crack-frequency" : 15, "heroin-use" : 0.4, "heroin-frequency" : 66, "hallucinogen-use" : 1.8, "hallucinogen-frequency" : 2, "inhalant-use" : 0.4, "inhalant-frequency" : 3.5, "pain-releiver-use" : 5.9, "pain-releiver-frequency" : 22, "oxycontin-use" : 0.9, "oxycontin-frequency" : 46, "tranquilizer-use" : 3.6, "tranquilizer-frequency" : 8, "stimulant-use" : 1.4, "stimulant-frequency" : 12, "meth-use" : 0.4, "meth-frequency" : 54, "sedative-use" : 0.4, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b7"), "age" : "35-49", "n" : 7391, "alcohol-use" : 75, "alcohol-frequency" : 52, "marijuana-use" : 10.4, "marijuana-frequency" : 48, "cocaine-use" : 1.5, "cocaine-frequency" : 15, "crack-use" : 0.5, "crack-frequency" : 48, "heroin-use" : 0.1, "heroin-frequency" : 280, "hallucinogen-use" : 0.6, "hallucinogen-frequency" : 3, "inhalant-use" : 0.3, "inhalant-frequency" : 10, "pain-releiver-use" : 4.2, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.3, "oxycontin-frequency" : 12, "tranquilizer-use" : 1.9, "tranquilizer-frequency" : 6, "stimulant-use" : 0.6, "stimulant-frequency" : 24, "meth-use" : 0.2, "meth-frequency" : 104, "sedative-use" : 0.3, "sedative-frequency" : 10 }
+{ "_id" : ObjectId("607d2ff93da03793b65c40b8"), "age" : "50-64", "n" : 3923, "alcohol-use" : 67.2, "alcohol-frequency" : 52, "marijuana-use" : 7.3, "marijuana-frequency" : 52, "cocaine-use" : 0.9, "cocaine-frequency" : 36, "crack-use" : 0.4, "crack-frequency" : 62, "heroin-use" : 0.1, "heroin-frequency" : 41, "hallucinogen-use" : 0.3, "hallucinogen-frequency" : 44, "inhalant-use" : 0.2, "inhalant-frequency" : 13.5, "pain-releiver-use" : 2.5, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.4, "oxycontin-frequency" : 5, "tranquilizer-use" : 1.4, "tranquilizer-frequency" : 10, "stimulant-use" : 0.3, "stimulant-frequency" : 24, "meth-use" : 0.2, "meth-frequency" : 30, "sedative-use" : 0.2, "sedative-frequency" : 104 }
+> db.inventory.aggregate([{$group:{_id:"$n"}}])
+{ "_id" : 7391 }
+{ "_id" : 2864 }
+{ "_id" : 2798 }
+{ "_id" : 3923 }
+{ "_id" : 4707 }
+{ "_id" : 2757 }
+{ "_id" : 3038 }
+{ "_id" : 2956 }
+{ "_id" : 3058 }
+{ "_id" : 2469 }
+{ "_id" : 2223 }
+{ "_id" : 2354 }
+{ "_id" : 2271 }
+{ "_id" : 4591 }
+{ "_id" : 2792 }
+{ "_id" : 2628 }
+> db.inventory.mapReduce(function(){emit(this.age,this.n);},function(key,values){return Array.sum(values)},{query:{cocaine-use:0.9},out:"drugs"})
+2021-04-24T20:59:25.101+0530 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:120
+> db.inventory.mapReduce(function(){emit(this.age,this.n);},function(key,values){return Array.sum(values)},{query:{cocaine-use:"0.9"},out:"drugs"})
+2021-04-24T21:00:26.390+0530 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:120
+> db.inventory.mapReduce(function(){emit(this.age,this.n);},function(key,values){return Array.sum(values)},{query:{n:3923},out:"drugs"})
+{
+	"result" : "drugs",
+	"timeMillis" : 92,
+	"counts" : {
+		"input" : 1,
+		"emit" : 1,
+		"reduce" : 0,
+		"output" : 1
+	},
+	"ok" : 1
+}
+> show collections
+drugs
+inventory
+> db.drugs.find()
+{ "_id" : "50-64", "value" : 3923 }
+> db.inventory.aggregate({match:{n:2792}})
+assert: command failed: {
+	"ok" : 0,
+	"errmsg" : "Unrecognized pipeline stage name: 'match'",
+	"code" : 40324,
+	"codeName" : "Location40324"
+} : aggregate failed
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:403:5
+DB.prototype._runAggregate@src/mongo/shell/db.js:260:9
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1212:12
+@(shell):1:1
+
+2021-04-24T21:06:52.177+0530 E QUERY    [thread1] Error: command failed: {
+	"ok" : 0,
+	"errmsg" : "Unrecognized pipeline stage name: 'match'",
+	"code" : 40324,
+	"codeName" : "Location40324"
+} : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:403:5
+DB.prototype._runAggregate@src/mongo/shell/db.js:260:9
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1212:12
+@(shell):1:1
+> db.inventory.aggregate({match:{n:3923}})
+assert: command failed: {
+	"ok" : 0,
+	"errmsg" : "Unrecognized pipeline stage name: 'match'",
+	"code" : 40324,
+	"codeName" : "Location40324"
+} : aggregate failed
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:403:5
+DB.prototype._runAggregate@src/mongo/shell/db.js:260:9
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1212:12
+@(shell):1:1
+
+2021-04-24T21:07:16.808+0530 E QUERY    [thread1] Error: command failed: {
+	"ok" : 0,
+	"errmsg" : "Unrecognized pipeline stage name: 'match'",
+	"code" : 40324,
+	"codeName" : "Location40324"
+} : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:403:5
+DB.prototype._runAggregate@src/mongo/shell/db.js:260:9
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1212:12
+@(shell):1:1
+> db.inventory.aggregate({match:{n:3923}})
+assert: command failed: {
+	"ok" : 0,
+	"errmsg" : "Unrecognized pipeline stage name: 'match'",
+	"code" : 40324,
+	"codeName" : "Location40324"
+} : aggregate failed
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:403:5
+DB.prototype._runAggregate@src/mongo/shell/db.js:260:9
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1212:12
+@(shell):1:1
+
+2021-04-24T21:07:39.749+0530 E QUERY    [thread1] Error: command failed: {
+	"ok" : 0,
+	"errmsg" : "Unrecognized pipeline stage name: 'match'",
+	"code" : 40324,
+	"codeName" : "Location40324"
+} : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:403:5
+DB.prototype._runAggregate@src/mongo/shell/db.js:260:9
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1212:12
+@(shell):1:1
+> db.inventory.aggregate({match:{n:2972}})
+assert: command failed: {
+	"ok" : 0,
+	"errmsg" : "Unrecognized pipeline stage name: 'match'",
+	"code" : 40324,
+	"codeName" : "Location40324"
+} : aggregate failed
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:403:5
+DB.prototype._runAggregate@src/mongo/shell/db.js:260:9
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1212:12
+@(shell):1:1
+
+2021-04-24T21:07:49.824+0530 E QUERY    [thread1] Error: command failed: {
+	"ok" : 0,
+	"errmsg" : "Unrecognized pipeline stage name: 'match'",
+	"code" : 40324,
+	"codeName" : "Location40324"
+} : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:16:14
+assert.commandWorked@src/mongo/shell/assert.js:403:5
+DB.prototype._runAggregate@src/mongo/shell/db.js:260:9
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1212:12
+@(shell):1:1
+> db.inventory.aggregate({$match:{n:2972}})
+> db.inventory.aggregate({$match:{n:3923}})
+{ "_id" : ObjectId("607d2ff93da03793b65c40b8"), "age" : "50-64", "n" : 3923, "alcohol-use" : 67.2, "alcohol-frequency" : 52, "marijuana-use" : 7.3, "marijuana-frequency" : 52, "cocaine-use" : 0.9, "cocaine-frequency" : 36, "crack-use" : 0.4, "crack-frequency" : 62, "heroin-use" : 0.1, "heroin-frequency" : 41, "hallucinogen-use" : 0.3, "hallucinogen-frequency" : 44, "inhalant-use" : 0.2, "inhalant-frequency" : 13.5, "pain-releiver-use" : 2.5, "pain-releiver-frequency" : 12, "oxycontin-use" : 0.4, "oxycontin-frequency" : 5, "tranquilizer-use" : 1.4, "tranquilizer-frequency" : 10, "stimulant-use" : 0.3, "stimulant-frequency" : 24, "meth-use" : 0.2, "meth-frequency" : 30, "sedative-use" : 0.2, "sedative-frequency" : 104 }
+> 
+
+
+
